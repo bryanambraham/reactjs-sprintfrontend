@@ -147,7 +147,7 @@ function Bali() {
         </div>
         <div className="flex justify-center mt-6">
           <button className="my-4 max-w-3xl flex justify-center items-center text-xl p-3 bg-red-600 rounded-md text-white transition duration-300 ease-in-out transform hover:bg-red-700 hover:scale-105 shadow-lg">
-            <a href="/calculator" className="w-full h-full flex items-center justify-center">
+            <a href="/Calculator" className="w-full h-full flex items-center justify-center">
               Calculator Cargo
             </a>
           </button>

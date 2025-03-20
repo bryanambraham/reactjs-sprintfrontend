@@ -1,6 +1,6 @@
-import { DescriptionContent } from "../components/DescriptionContent"
-import { HeroSection } from "../components/HeroSection"
-import { WhyChooseHero } from "../components/WhyChooseHero"
+import DescriptionContent from "../components/DescriptionContent"
+import HeroSection from "../components/HeroSection"
+import WhyChooseHero from "../components/WhyChooseHero"
 
 function Motor() {
   const descriptionItems = [
@@ -12,19 +12,19 @@ function Motor() {
       ],
     },
     {
-      title: "Jasa Pengiriman Motor Murah Cargonesia Express",
+      title: "Jasa Pengiriman Motor Murah Sprint Express",
       content: [
-        "Selain jasa pengiriman mobil, Cargonesia Express juga melayani pengiriman motor untuk tujuan pengiriman dalam kota (Jakarta) dan kota-kota sekitarnya seperti Bekasi, Tangerang, Depok, Bandung dan kota-kota lain di Pulau Jawa.",
-        "Cargonesia juga menyediakan jasa kirim paket motor antar provinsi mencakup tujuan kota dan kabupaten di seluruh Indonesia. Estimasi waktu pengiriman tentu saja tergantung dari jarak kota tujuan dimana jarak dan waktu tempuh ini nantinya juga mempengaruhi biaya pengiriman.",
+        "Selain jasa pengiriman mobil, Sprint Express juga melayani pengiriman motor untuk tujuan pengiriman dalam kota (Jakarta) dan kota-kota sekitarnya seperti Bekasi, Tangerang, Depok, Bandung dan kota-kota lain di Pulau Jawa.",
+        "Sprint juga menyediakan jasa kirim paket motor antar provinsi mencakup tujuan kota dan kabupaten di seluruh Indonesia. Estimasi waktu pengiriman tentu saja tergantung dari jarak kota tujuan dimana jarak dan waktu tempuh ini nantinya juga mempengaruhi biaya pengiriman.",
         "Diluar biaya pengiriman, berlaku premi asuransi yang sifatnya opsional. Biaya asuransi yaitu sebesar 0,25% dari nilai harga motor. Besarnya asuransi ini berlaku untuk semua jenis motor berapapun kapasitas mesinnya.",
-        "Disamping jasa kirim motor murah, Cargonesia Express juga menawarkan jemput motor gratis untuk area Jadetabek. Pick up gratis ini disediakan untuk mempermudah customer yang tidak memiliki waktu untuk mengantarkan motor ke Cargonesia.",
+        "Disamping jasa kirim motor murah, Sprint Express juga menawarkan jemput motor gratis untuk area Jadetabek. Pick up gratis ini disediakan untuk mempermudah customer yang tidak memiliki waktu untuk mengantarkan motor ke Cargonesia.",
       ],
     },
     {
       title: "Biaya Kirim Paket Motor ke Seluruh Indonesia",
       content: [
         "Penghitungan tarif pengiriman sepeda motor sebenarnya cukup mudah karena mengacu pada beberapa kriteria tertentu. Biasanya biaya kirim motor dihitung per-unit sekaligus berdasarkan kapasitas (cc) mesinnya. Semakin besar ukuran motor maka semakin tinggi cc-nya, dengan demikian semakin besar pula ongkos kirimnya.",
-        "Cargonesia Express dan jasa ekspedisi lain pada umumnya menggunakan rincian biaya pengiriman motor berdasarkan beberapa kriteria berikut ini:",
+        "Sprint Express dan jasa ekspedisi lain pada umumnya menggunakan rincian biaya pengiriman motor berdasarkan beberapa kriteria berikut ini:",
       ],
     },
     {

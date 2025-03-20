@@ -1,6 +1,6 @@
-import { DescriptionContent } from "../components/DescriptionContent"
-import { HeroSection } from "../components/HeroSection"
-import { WhyChooseHero } from "../components/WhyChooseHero"
+import DescriptionContent from "../components/DescriptionContent"
+import HeroSection from "../components/HeroSection"
+import WhyChooseHero from "../components/WhyChooseHero"
 
 function AlatBerat() {
   const descriptionItems = [
@@ -29,7 +29,7 @@ function AlatBerat() {
       content: [
         <em className="italic" key="uniqueKey">
           Selengkapnya tentang
-          <a href="/mobil" className="text-blue-600">
+          <a href="/Mobil" className="text-blue-600">
             {" "}
             jasa pengiriman mobil.
           </a>

@@ -123,7 +123,7 @@ const SiteHeader = () => {
                 </div>
               </div>
 
-              <a href="/AboutUs" className="text-gray-700 hover:text-[#FF6600]">
+              <a href="/About" className="text-gray-700 hover:text-[#FF6600]">
                 Tentang Kami
               </a>
               <a href="/Blog" className="text-gray-700 hover:text-[#FF6600]">
@@ -188,13 +188,13 @@ const SiteHeader = () => {
                   )}
                 </div>
 
-                <a href="/tentang-kami" className="text-gray-700 hover:text-[#FF6600]">
+                <a href="/About" className="text-gray-700 hover:text-[#FF6600]">
                   Tentang Kami
                 </a>
-                <a href="/blog" className="text-gray-700 hover:text-[#FF6600]">
+                <a href="/Blog" className="text-gray-700 hover:text-[#FF6600]">
                   Blog
                 </a>
-                <a href="/promo" className="text-gray-700 hover:text-[#FF6600]">
+                <a href="/Promo" className="text-gray-700 hover:text-[#FF6600]">
                   Promo
                 </a>
               </div>

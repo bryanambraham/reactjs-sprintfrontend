@@ -6,6 +6,13 @@ import Jawa from './pages/Jawa';
 import Kalimantan from './pages/Kalimantan';
 import Calculator from './pages/Calculator';
 import Layout from './components/Layout';
+import AlatBerat from './pages/AlatBerat';
+import Mobil from './pages/Mobil';
+import Motor from './pages/Motor';
+import Barang from './pages/Barang';
+import SewaTruk from './pages/SewaTruk';
+import Sumatera from './pages/Sumatera';
+import Promo from './pages/Promo';
 
 function App() {
   return (
@@ -14,10 +21,17 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="alatberat" element={<AlatBerat />} />
+          <Route path="sewatruk" element={<SewaTruk />} />
+          <Route path="mobil" element={<Mobil />} />
+          <Route path="motor" element={<Motor />} />
+          <Route path="barang" element={<Barang />} />
           <Route path="bali" element={<Bali />} />
           <Route path="jawa" element={<Jawa />} />
+          <Route path="sumatera" element={<Sumatera />} />
           <Route path="kalimantan" element={<Kalimantan />} />
           <Route path="calculator" element={<Calculator />} />
+          <Route path="promo" element={<Promo />} />
         </Route>
       </Routes>
     </BrowserRouter>

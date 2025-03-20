@@ -1,6 +1,6 @@
-import { DescriptionContent } from "../components/DescriptionContent"
-import { HeroSection } from "../components/HeroSection"
-import { WhyChooseHero } from "../components/WhyChooseHero"
+import DescriptionContent from "../components/DescriptionContent"
+import HeroSection from "../components/HeroSection"
+import WhyChooseHero from "../components/WhyChooseHero"
 
 function Mobil() {
   const descriptionItems = [

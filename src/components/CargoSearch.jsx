@@ -15,7 +15,7 @@ const CargoSearch = () => {
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/getdestinations?type=${type}`)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/getdestinations?type=${type}`)
         const data = await response.json()
         setAllDestinations(data)
       } catch (error) {
@@ -67,7 +67,7 @@ const CargoSearch = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/getcargo?type=${type}&destination=${destination}`)
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/getcargo?type=${type}&destination=${destination}`)
       const data = await response.json()
       setCargoData(data)
       setShowDropdown(false)

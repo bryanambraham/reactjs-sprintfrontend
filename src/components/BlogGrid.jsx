@@ -11,8 +11,8 @@ const BlogGrid = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        console.log("APP_URL:", process.env.REACT_APP_API_URL)
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/getblog`)
+        console.log("APP_URL:", import.meta.env.VITE_API_URL)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/getblog`)
         if (!response.ok) {
           throw new Error("Failed to fetch blog posts")
         }

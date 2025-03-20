@@ -3,8 +3,8 @@ import { Phone, Mail, MapPin } from "lucide-react"
 const SiteFooter = () => {
   return (
     <footer className="w-full bg-gray-100 pt-16 pb-8">
-      <div className="container-responsive">
-        <div className="grid-responsive-4 grid-cols-5">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {/* About Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
@@ -29,7 +29,7 @@ const SiteFooter = () => {
                   +62 852-8265-6556
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600 ">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Mail className="h-4 w-4 text-[#DE1F26]" />
                 <a
                   href="mailto:marketing@sprintcargo.id"
@@ -114,7 +114,7 @@ const SiteFooter = () => {
             </ul>
           </div>
 
-          {/* Service Areas */}
+          {/* Working Hours */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
               JAM KERJA
@@ -138,4 +138,3 @@ const SiteFooter = () => {
 }
 
 export default SiteFooter
-

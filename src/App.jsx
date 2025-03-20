@@ -13,6 +13,7 @@ import Barang from './pages/Barang';
 import SewaTruk from './pages/SewaTruk';
 import Sumatera from './pages/Sumatera';
 import Promo from './pages/Promo';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="kalimantan" element={<Kalimantan />} />
           <Route path="calculator" element={<Calculator />} />
           <Route path="promo" element={<Promo />} />
+          <Route path="blog" element={<Blog />} />
         </Route>
       </Routes>
     </BrowserRouter>

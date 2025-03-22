@@ -59,7 +59,7 @@ const BlogGrid = () => {
               </div>
             </a>
             <div className="p-6">
-              <a href="#">
+              <a href={`/Blog/${post.id}`}>
                 <h2 className="text-xl font-bold text-gray-900 mb-2 hover:text-[#FF6600] transition-colors line-clamp-2">
                   {post.title}
                 </h2>

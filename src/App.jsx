@@ -14,6 +14,7 @@ import SewaTruk from './pages/SewaTruk';
 import Sumatera from './pages/Sumatera';
 import Promo from './pages/Promo';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="calculator" element={<Calculator />} />
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<BlogPost />} />
         </Route>
       </Routes>
     </BrowserRouter>

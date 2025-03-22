@@ -31,7 +31,7 @@ const BlogGrid = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
-        <Loader2 className="w-8 h-8 animate-spin text-[#FF6600]" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -48,7 +48,7 @@ const BlogGrid = () => {
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <article key={post.id} className="bg-accent rounded-lg shadow-md overflow-hidden">
             <a href="#" className="block">
               <div className="relative aspect-[16/9]">
                 <img
@@ -60,11 +60,11 @@ const BlogGrid = () => {
             </a>
             <div className="p-6">
               <a href={`/Blog/${post.id}`}>
-                <h2 className="text-xl font-bold text-gray-900 mb-2 hover:text-[#FF6600] transition-colors line-clamp-2">
+                <h2 className="text-xl font-bold text-text-primary mb-2 hover:text-primary transition-colors line-clamp-2">
                   {post.title}
                 </h2>
               </a>
-              <div className="text-sm text-gray-600 mb-3">
+              <div className="text-sm text-text-secondary mb-3">
                 by {post.writer} |{" "}
                 {new Date(post.created_at).toLocaleDateString("en-US", {
                   month: "short",
@@ -72,10 +72,10 @@ const BlogGrid = () => {
                   year: "numeric",
                 })}
               </div>
-              <div className="text-sm text-gray-600 mb-3">{post.summary}</div>
+              <div className="text-sm text-text-secondary mb-3">{post.summary}</div>
               <a
                 href={`/Blog/${post.id}`}
-                className="inline-block mt-4 text-[#FF6600] hover:text-[#ff751a] font-semibold transition-colors"
+                className="inline-block mt-4 text-primary hover:text-primary-dark font-semibold transition-colors"
               >
                 Read More →
               </a>

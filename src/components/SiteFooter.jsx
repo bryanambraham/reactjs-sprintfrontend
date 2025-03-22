@@ -1,136 +1,148 @@
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Link } from "react-router-dom"
+import { Truck, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
-const SiteFooter = () => {
+export function SiteFooter() {
   return (
-    <footer className="w-full bg-gray-100 pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {/* About Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
-              TENTANG KAMI
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Sprint Cargo adalah perusahaan ekspedisi terpercaya yang melayani pengiriman barang ke seluruh Indonesia
-              melalui jalur darat, laut, dan udara. Sprint Cargo siap menjadi mitra logistik terbaik untuk kebutuhan
-              bisnis maupun personal.
+    <footer className="bg-secondary-dark text-text-primary">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div>
+            <div className="flex items-center space-x-2 mb-4">
+              <Truck size={28} className="text-primary" />
+              <span className="text-text-primary font-bold text-xl">SprintCargo</span>
+            </div>
+            <p className="text-text-secondary mb-4">
+              Providing reliable logistics and shipping services across Indonesia since 2010.
             </p>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
-              KONTAK KAMI
-            </h3>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#DE1F26]">
-                <Phone className="h-4 w-4 text-[#DE1F26]" />
-                <a href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.">
-                  +62 852-8265-6556
-                </a>
+              <div className="flex items-start">
+                <MapPin size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
+                <span className="text-text-secondary">
+                  Jalan Kangkung Nomor 4, Cipulir, Kebayoran Lama, Jakarta Selatan
+                </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Mail className="h-4 w-4 text-[#DE1F26]" />
-                <a
-                  href="mailto:marketing@sprintcargo.id"
-                  className="text-gray-600 hover:underline hover:text-[#DE1F26]"
-                >
-                  marketing@sprintcargo.id
-                </a>
+              <div className="flex items-center">
+                <Phone size={18} className="text-primary mr-2 flex-shrink-0" />
+                <span className="text-text-secondary">(021) 27092288</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Mail className="h-4 w-4 text-[#DE1F26]" />
-                <a
-                  href="mailto:marketing@sprintcargo.id"
-                  className="text-gray-600 hover:underline hover:text-[#DE1F26]"
-                >
-                  cs@sprintcargo.id
-                </a>
-              </div>
-              <div className="flex items-start gap-2 text-sm text-gray-600">
-                <MapPin className="h-4 w-4 text-[#DE1F26] mt-1" />
-                <a
-                  href="https://www.google.com/maps?q=Jl+Pasar+Kebayoran+Lama+No+20,+Kebayoran+Lama,+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta+12230"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#DE1F26]"
-                >
-                  <span>
-                    Jl Pasar Kebayoran Lama No 20, <br /> Kebayoran Lama, Jakarta Selatan, <br /> Daerah Khusus Ibukota
-                    Jakarta 12230
-                  </span>
-                </a>
+              <div className="flex items-center">
+                <Mail size={18} className="text-primary mr-2 flex-shrink-0" />
+                <span className="text-text-secondary">info@sprintcargo.id</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
-              QUICK LINKS
-            </h3>
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/#" className="text-sm text-gray-600 hover:text-[#DE1F26]">
-                  Biaya Pick-up
-                </a>
+                <Link to="/barang" className="text-text-secondary hover:text-primary transition-colors">
+                  Pengiriman Barang
+                </Link>
               </li>
               <li>
-                <a href="/Calculator" className="text-sm text-gray-600 hover:text-[#DE1F26]">
+                <Link to="/mobil" className="text-text-secondary hover:text-primary transition-colors">
+                  Pengiriman Mobil
+                </Link>
+              </li>
+              <li>
+                <Link to="/motor" className="text-text-secondary hover:text-primary transition-colors">
+                  Pengiriman Motor
+                </Link>
+              </li>
+              <li>
+                <Link to="/alatberat" className="text-text-secondary hover:text-primary transition-colors">
+                  Pengiriman Alat Berat
+                </Link>
+              </li>
+              <li>
+                <Link to="/calculator" className="text-text-secondary hover:text-primary transition-colors">
                   Calculator Cargo
-                </a>
-              </li>
-              <li>
-                <a href="/Blog" className="text-sm text-gray-600 hover:text-[#DE1F26]">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="/Promo" className="text-sm text-gray-600 hover:text-[#DE1F26]">
-                  Promo
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Service Areas */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
-              AREA LAYANAN
-            </h3>
+          {/* Destinations */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Destinations</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-gray-600 hover:text-[#DE1F26]">
-                <a href="/Kalimantan">Kalimantan</a>
+              <li>
+                <Link to="/jawa" className="text-text-secondary hover:text-primary transition-colors">
+                  Jawa
+                </Link>
               </li>
-              <li className="text-sm text-gray-600  hover:text-[#DE1F26]">
-                <a href="/Sumatera">Sumatera</a>
+              <li>
+                <Link to="/bali" className="text-text-secondary hover:text-primary transition-colors">
+                  Bali
+                </Link>
               </li>
-              <li className="text-sm text-gray-600  hover:text-[#DE1F26]">
-                <a href="/Bali">Bali</a>
+              <li>
+                <Link to="/kalimantan" className="text-text-secondary hover:text-primary transition-colors">
+                  Kalimantan
+                </Link>
               </li>
-              <li className="text-sm text-gray-600  hover:text-[#DE1F26]">
-                <a href="/Jawa">Jawa</a>
+              <li>
+                <Link to="/maluku" className="text-text-secondary hover:text-primary transition-colors">
+                  Maluku
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Working Hours */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-[#002E5D] border-b-2 border-[#1B1464] pb-2 mb-4 inline-block">
-              JAM KERJA
-            </h3>
-            <ul className="space-y-2">
-              <div className="mt-1 text-gray-600 font-bold">
-                <p>Mon- Fri &nbsp; 09.00 - 23.00</p>
-                <p>Sun &nbsp; 09.00 - 16.00</p>
-              </div>
-            </ul>
+          {/* Connect */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
+            <div className="flex space-x-4 mb-6">
+              <a href="#" className="text-text-secondary hover:text-primary transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-text-secondary hover:text-primary transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="#" className="text-text-secondary hover:text-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-text-secondary hover:text-primary transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
+            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+            <form className="space-y-2">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="w-full px-3 py-2 bg-accent text-text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-4 border-t border-gray-300">
-          <p className="text-center text-sm text-gray-600">© {new Date().getFullYear()} SPRINT CARGO</p>
+      {/* Bottom Bar */}
+      <div className="bg-black py-4">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-text-secondary text-sm mb-2 md:mb-0">
+              &copy; {new Date().getFullYear()} SprintCargo. All rights reserved.
+            </p>
+            <div className="flex space-x-4">
+              <Link to="/privacy" className="text-text-secondary hover:text-primary text-sm transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="text-text-secondary hover:text-primary text-sm transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -138,3 +150,4 @@ const SiteFooter = () => {
 }
 
 export default SiteFooter
+

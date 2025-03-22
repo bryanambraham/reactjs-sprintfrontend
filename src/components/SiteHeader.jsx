@@ -1,207 +1,279 @@
 "use client"
 
-import { useState } from "react"
-import { Phone, Mail, Facebook, Twitter, Rss, ChevronDown, Menu, X } from "lucide-react"
+import { useState, useRef } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { Menu, X, ChevronDown, Truck } from "lucide-react"
 
-const SiteHeader = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+export function SiteHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const dropdownTimeoutRef = useRef(null)
 
-  const layananItems = [
-    { title: "Jasa Ekspedisi Barang", href: "/Barang" },
-    { title: "Jasa Pengiriman Mobil", href: "/Mobil" },
-    { title: "Jasa Pengiriman Motor", href: "/Motor" },
-    { title: "Jasa Pengiriman Alat Berat", href: "/AlatBerat" },
-    { title: "Sewa Truk", href: "/SewaTruk" },
-  ]
+  const handleDropdownEnter = (dropdown) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
+    }
+    setActiveDropdown(dropdown)
+  }
 
-  const cekOngkirItems = [
-    { title: "Ongkir Jakarta Kalimantan", href: "/Kalimantan" },
-    { title: "Ongkir Jakarta Sumatera", href: "/Sumatera" },
-    { title: "Ongkir Jakarta Bali", href: "/Bali" },
-    { title: "Ongkir Jakarta Jawa", href: "/Jawa" },
-  ]
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 300) // 300ms delay before closing dropdown
+  }
 
   return (
-    <header className="w-full relative z-50">
-      {/* Top bar */}
-      <div className="w-full bg-[#FF6600] text-white py-1">
-        <div className="container-responsive flex justify-between items-center text-sm">
-          <div className="hidden md:flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <a href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.">
-                +62 852-8265-6556
-              </a>
+    <header className="bg-secondary shadow-md">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <Truck size={28} className="text-primary" />
+            <span className="text-text-primary font-bold text-xl">SprintCargo</span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+              }
+            >
+              Home
+            </NavLink>
+
+            {/* Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleDropdownEnter("services")}
+              onMouseLeave={handleDropdownLeave}
+            >
+              <button className="flex items-center text-text-primary hover:text-primary transition-colors">
+                <span>Services</span>
+                <ChevronDown size={16} className="ml-1" />
+              </button>
+              <div
+                className={`absolute left-0 mt-2 w-48 bg-accent rounded-md shadow-lg py-2 z-10 transition-opacity duration-200 ${
+                  activeDropdown === "services" ? "opacity-100 visible" : "opacity-0 invisible"
+                }`}
+                onMouseEnter={() => handleDropdownEnter("services")}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <Link to="/barang" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Pengiriman Barang
+                </Link>
+                <Link to="/mobil" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Pengiriman Mobil
+                </Link>
+                <Link to="/motor" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Pengiriman Motor
+                </Link>
+                <Link
+                  to="/alatberat"
+                  className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary"
+                >
+                  Pengiriman Alat Berat
+                </Link>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              <a href="mailto:marketing@sprintcargo.id">marketing@sprintcargo.id</a>
+
+            {/* Destinations Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => handleDropdownEnter("destinations")}
+              onMouseLeave={handleDropdownLeave}
+            >
+              <button className="flex items-center text-text-primary hover:text-primary transition-colors">
+                <span>Destinations</span>
+                <ChevronDown size={16} className="ml-1" />
+              </button>
+              <div
+                className={`absolute left-0 mt-2 w-48 bg-accent rounded-md shadow-lg py-2 z-10 transition-opacity duration-200 ${
+                  activeDropdown === "destinations" ? "opacity-100 visible" : "opacity-0 invisible"
+                }`}
+                onMouseEnter={() => handleDropdownEnter("destinations")}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <Link to="/jawa" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Jawa
+                </Link>
+                <Link to="/bali" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Bali
+                </Link>
+                <Link
+                  to="/kalimantan"
+                  className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary"
+                >
+                  Kalimantan
+                </Link>
+                <Link to="/maluku" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Maluku
+                </Link>
+              </div>
             </div>
+
+            <NavLink
+              to="/calculator"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+              }
+            >
+              Calculator
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+              }
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+              }
+            >
+              Blog
+            </NavLink>
+          </nav>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <a
+              href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong."
+              className="bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition-colors"
+            >
+              Kontak Kami
+            </a>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-gray-200 hide-on-mobile">
-              <Facebook className="h-4 w-4" />
-            </a>
-            <a href="#" className="hover:text-gray-200 hide-on-mobile">
-              <Twitter className="h-4 w-4" />
-            </a>
-            <a href="#" className="hover:text-gray-200 hide-on-mobile">
-              <Rss className="h-4 w-4" />
-            </a>
-          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden text-text-primary" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Main navigation */}
-      <div className="bg-white shadow-sm">
-        <div className="container-responsive py-4">
-          <div className="flex justify-between items-center">
-            <a href="/" className="flex items-center">
-              <img src="/sprintlogo.png" alt="SprintCargo Logo" className="h-12 w-auto" />
-            </a>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-6">
-              <a href="/" className="text-gray-700 hover:text-[#FF6600]">
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-accent">
+          <div className="container mx-auto px-4 py-3">
+            <nav className="flex flex-col space-y-4">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
-              </a>
-
-              {/* Layanan Dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center gap-1 text-gray-700 hover:text-[#FF6600]"
-                  onClick={() => setActiveDropdown(activeDropdown === "layanan" ? null : "layanan")}
-                  onMouseEnter={() => setActiveDropdown("layanan")}
-                >
-                  Layanan
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div
-                  className={`absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-64 ${
-                    activeDropdown === "layanan" ? "block" : "hidden"
-                  }`}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  {layananItems.map((item) => (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#FF6600]"
-                    >
-                      {item.title}
-                    </a>
-                  ))}
+              </NavLink>
+              <div className="space-y-2">
+                <div className="text-text-primary font-medium">Services</div>
+                <div className="pl-4 space-y-2">
+                  <Link
+                    to="/barang"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Pengiriman Barang
+                  </Link>
+                  <Link
+                    to="/mobil"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Pengiriman Mobil
+                  </Link>
+                  <Link
+                    to="/motor"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Pengiriman Motor
+                  </Link>
+                  <Link
+                    to="/alatberat"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Pengiriman Alat Berat
+                  </Link>
                 </div>
               </div>
-
-              {/* Cek Ongkir Dropdown */}
-              <div className="relative group">
-                <button
-                  className="flex items-center gap-1 text-gray-700 hover:text-[#FF6600]"
-                  onClick={() => setActiveDropdown(activeDropdown === "ongkir" ? null : "ongkir")}
-                  onMouseEnter={() => setActiveDropdown("ongkir")}
-                >
-                  Cek Ongkir
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div
-                  className={`absolute top-full left-0 bg-white shadow-lg rounded-md py-2 w-64 ${
-                    activeDropdown === "ongkir" ? "block" : "hidden"
-                  }`}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  {cekOngkirItems.map((item) => (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className="flex flex-row px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-[#FF6600]"
-                    >
-                      {item.title}
-                    </a>
-                  ))}
+              <div className="space-y-2">
+                <div className="text-text-primary font-medium">Destinations</div>
+                <div className="pl-4 space-y-2">
+                  <Link
+                    to="/jawa"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Jawa
+                  </Link>
+                  <Link
+                    to="/bali"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Bali
+                  </Link>
+                  <Link
+                    to="/kalimantan"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Kalimantan
+                  </Link>
+                  <Link
+                    to="/maluku"
+                    className="block text-text-secondary hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Maluku
+                  </Link>
                 </div>
               </div>
-
-              <a href="/About" className="text-gray-700 hover:text-[#FF6600]">
-                Tentang Kami
-              </a>
-              <a href="/Blog" className="text-gray-700 hover:text-[#FF6600]">
+              <NavLink
+                to="/calculator"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Calculator
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  isActive ? "text-primary font-medium" : "text-text-primary hover:text-primary transition-colors"
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Blog
-              </a>
-              <a href="/Promo" className="text-gray-700 hover:text-[#FF6600]">
-                Promo
+              </NavLink>
+              <a
+                href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong."
+                className="bg-primary hover:bg-primary-dark text-white font-medium py-2 px-4 rounded-md transition-colors inline-block w-full text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Kontak Kami
               </a>
             </nav>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
           </div>
-
-          {/* Mobile Navigation */}
-          {isMobileMenuOpen && (
-            <nav className="md:hidden mt-4 py-4 border-t">
-              <div className="flex flex-col gap-4">
-                <a href="/" className="text-gray-700 hover:text-[#FF6600]">
-                  Home
-                </a>
-
-                {/* Mobile Layanan */}
-                <div className="space-y-2">
-                  <button
-                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#FF6600]"
-                    onClick={() => setActiveDropdown(activeDropdown === "layanan-mobile" ? null : "layanan-mobile")}
-                  >
-                    Layanan
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                  {activeDropdown === "layanan-mobile" && (
-                    <div className="pl-4 space-y-2">
-                      {layananItems.map((item) => (
-                        <a key={item.href} href={item.href} className="block text-gray-600 hover:text-[#FF6600]">
-                          {item.title}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Mobile Cek Ongkir */}
-                <div className="space-y-2">
-                  <button
-                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#FF6600]"
-                    onClick={() => setActiveDropdown(activeDropdown === "ongkir-mobile" ? null : "ongkir-mobile")}
-                  >
-                    Cek Ongkir
-                    <ChevronDown className="h-4 w-4" />
-                  </button>
-                  {activeDropdown === "ongkir-mobile" && (
-                    <div className="pl-4 space-y-2">
-                      {cekOngkirItems.map((item) => (
-                        <a key={item.href} href={item.href} className="block text-gray-600 hover:text-[#FF6600]">
-                          {item.title}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <a href="/About" className="text-gray-700 hover:text-[#FF6600]">
-                  Tentang Kami
-                </a>
-                <a href="/Blog" className="text-gray-700 hover:text-[#FF6600]">
-                  Blog
-                </a>
-                <a href="/Promo" className="text-gray-700 hover:text-[#FF6600]">
-                  Promo
-                </a>
-              </div>
-            </nav>
-          )}
         </div>
-      </div>
+      )}
     </header>
   )
 }

@@ -53,20 +53,20 @@ const PromoCounter = () => {
   const padNumber = (num) => String(num).padStart(2, "0")
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="containerm mx-auto px-4 max-w-4xl">
+    <section className="py-16 bg-secondary">
+      <div className="container mx-auto px-4 max-w-4xl">
         {/* Cek Ongkir */}
         <div className="text-center mb-8">
           <a
             href="#"
-            className="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-500 transition-colors"
+            className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
           >
             Ayo Cek Ongkir dan Gunakan Kalkulator Cargo!
           </a>
         </div>
 
         {/* Countdown Timer */}
-        <div className="bg-[#FF6600] text-white rounded-lg p-6 mb-8">
+        <div className="bg-primary text-white rounded-lg p-6 mb-8">
           <h2 className="text-center text-xl md:text-2xl font-bold mb-6">Promo Berakhir Pada 30 Maret 2026</h2>
           <div className="flex justify-center items-center space-x-4">
             <div className="text-center">
@@ -95,20 +95,20 @@ const PromoCounter = () => {
           {destinations.map((destination, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row justify-between items-center gap-4 p-4 bg-white rounded-lg shadow"
+              className="flex flex-col md:flex-row justify-between items-center gap-4 p-4 bg-accent rounded-lg shadow"
             >
-              <p className="text-gray-700 text-center md:text-left">{destination.description}</p>
+              <p className="text-text-primary text-center md:text-left">{destination.description}</p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href={destination.contact}
-                  className="inline-flex items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                  className="inline-flex items-center bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
                 >
                   <span className="mr-2">WhatsApp</span>
                 </a>
 
                 <a
                   href={destination.cektarif}
-                  className="inline-flex items-center border-2 border-[#FF6600] text-[#FF6600] px-4 py-2 rounded-lg hover:bg-[#FF6600] hover:text-white transition-colors"
+                  className="inline-flex items-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors"
                 >
                   Cek Ongkir
                 </a>

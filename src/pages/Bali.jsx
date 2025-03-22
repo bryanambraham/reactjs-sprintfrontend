@@ -32,7 +32,7 @@ function Bali() {
         "Kami juga melayani pengiriman ke wilayah terpencil atau lokasi khusus di Bali dengan sistem pengiriman door-to-door.",
         <em className="italic" key="denpasar-link">
           Selengkapnya tentang
-          <a href="/denpasar" className="text-blue-600 font-bold">
+          <a href="/denpasar" className="text-primary font-bold">
             {" "}
             Ekspedisi Jakarta Denpasar.
           </a>
@@ -66,7 +66,7 @@ function Bali() {
     {
       title: "Keunggulan Menggunakan Jasa Ekspedisi Sprint Cargo ke Bali",
       content: [
-        <ol className="list-decimal pl-5 space-y-2">
+        <ol className="list-decimal pl-5 space-y-2 text-text-primary" key="keunggulan-list">
           <li>
             <strong>Jalur Pengiriman Fleksibel</strong> – Barang dikirim melalui jalur darat menggunakan trucking dan
             dilanjutkan dengan kapal ferry dari Ketapang ke Gilimanuk.
@@ -97,25 +97,25 @@ function Bali() {
         "Kami menawarkan berbagai metode pengiriman yang bisa disesuaikan dengan kebutuhan pelanggan untuk memastikan barang tiba dengan aman dan tepat waktu.",
       ],
       list: [
-        <a href="/denpasar" className="font-semibold text-gray-500" key="denpasar">
+        <a href="/denpasar" className="font-semibold text-text-secondary hover:text-primary" key="denpasar">
           Ekspedisi Jakarta Denpasar
         </a>,
-        <a href="/gianyar" className="font-semibold text-gray-500" key="gianyar">
+        <a href="/gianyar" className="font-semibold text-text-secondary hover:text-primary" key="gianyar">
           Ekspedisi Jakarta Gianyar
         </a>,
-        <a href="/badung" className="font-semibold text-gray-500" key="badung">
+        <a href="/badung" className="font-semibold text-text-secondary hover:text-primary" key="badung">
           Ekspedisi Jakarta Badung
         </a>,
-        <a href="/tabanan" className="font-semibold text-gray-500" key="tabanan">
+        <a href="/tabanan" className="font-semibold text-text-secondary hover:text-primary" key="tabanan">
           Ekspedisi Jakarta Tabanan
         </a>,
-        <a href="/buleleng" className="font-semibold text-gray-500" key="buleleng">
+        <a href="/buleleng" className="font-semibold text-text-secondary hover:text-primary" key="buleleng">
           Ekspedisi Jakarta Buleleng
         </a>,
-        <a href="/karangasem" className="font-semibold text-gray-500" key="karangasem">
+        <a href="/karangasem" className="font-semibold text-text-secondary hover:text-primary" key="karangasem">
           Ekspedisi Jakarta Karangasem
         </a>,
-        <a href="/nusapenida" className="font-semibold text-gray-500" key="nusapenida">
+        <a href="/nusapenida" className="font-semibold text-text-secondary hover:text-primary" key="nusapenida">
           Ekspedisi Jakarta Nusa Penida
         </a>,
       ],
@@ -123,7 +123,7 @@ function Bali() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-secondary">
       <HeroSection
         title="Jasa Ekspedisi Jakarta ke Bali Cepat dan Terpercaya"
         description="Butuh jasa ekspedisi murah dari Jakarta ke Bali? Sprint Cargo siap mengirim barang ke Denpasar, Badung, Gianyar, dan seluruh Bali dengan layanan aman dan profesional."
@@ -135,19 +135,19 @@ function Bali() {
         imageAlt="Hero PIC"
       />
 
-      <section className="py-6">
+      <section className="py-6 bg-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none" />
+          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
         <div className="py-8 mb-8">
           <CargoSearch />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DescriptionContentBot items={descriptionItemsBot} className="prose prose-lg max-w-none" />
+          <DescriptionContentBot items={descriptionItemsBot} className="prose prose-lg max-w-none text-text-primary" />
         </div>
         <div className="flex justify-center mt-6">
-          <button className="my-4 max-w-3xl flex justify-center items-center text-xl p-3 bg-red-600 rounded-md text-white transition duration-300 ease-in-out transform hover:bg-red-700 hover:scale-105 shadow-lg">
-            <a href="/Calculator" className="w-full h-full flex items-center justify-center">
+          <button className="my-4 max-w-3xl flex justify-center items-center text-xl p-3 bg-primary rounded-md text-white transition duration-300 ease-in-out transform hover:bg-primary-dark hover:scale-105 shadow-lg">
+            <a href="/calculator" className="w-full h-full flex items-center justify-center">
               Calculator Cargo
             </a>
           </button>

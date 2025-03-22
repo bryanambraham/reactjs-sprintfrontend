@@ -12,26 +12,26 @@ function Motor() {
       ],
     },
     {
-      title: "Jasa Pengiriman Motor Murah Sprint Express",
+      title: "Jasa Pengiriman Motor Murah SprintCargo",
       content: [
-        "Selain jasa pengiriman mobil, Sprint Express juga melayani pengiriman motor untuk tujuan pengiriman dalam kota (Jakarta) dan kota-kota sekitarnya seperti Bekasi, Tangerang, Depok, Bandung dan kota-kota lain di Pulau Jawa.",
-        "Sprint juga menyediakan jasa kirim paket motor antar provinsi mencakup tujuan kota dan kabupaten di seluruh Indonesia. Estimasi waktu pengiriman tentu saja tergantung dari jarak kota tujuan dimana jarak dan waktu tempuh ini nantinya juga mempengaruhi biaya pengiriman.",
+        "Selain jasa pengiriman mobil, SprintCargo juga melayani pengiriman motor untuk tujuan pengiriman dalam kota (Jakarta) dan kota-kota sekitarnya seperti Bekasi, Tangerang, Depok, Bandung dan kota-kota lain di Pulau Jawa.",
+        "SprintCargo juga menyediakan jasa kirim paket motor antar provinsi mencakup tujuan kota dan kabupaten di seluruh Indonesia. Estimasi waktu pengiriman tentu saja tergantung dari jarak kota tujuan dimana jarak dan waktu tempuh ini nantinya juga mempengaruhi biaya pengiriman.",
         "Diluar biaya pengiriman, berlaku premi asuransi yang sifatnya opsional. Biaya asuransi yaitu sebesar 0,25% dari nilai harga motor. Besarnya asuransi ini berlaku untuk semua jenis motor berapapun kapasitas mesinnya.",
-        "Disamping jasa kirim motor murah, Sprint Express juga menawarkan jemput motor gratis untuk area Jadetabek. Pick up gratis ini disediakan untuk mempermudah customer yang tidak memiliki waktu untuk mengantarkan motor ke Cargonesia.",
+        "Disamping jasa kirim motor murah, SprintCargo juga menawarkan jemput motor gratis untuk area Jadetabek. Pick up gratis ini disediakan untuk mempermudah customer yang tidak memiliki waktu untuk mengantarkan motor ke SprintCargo.",
       ],
     },
     {
       title: "Biaya Kirim Paket Motor ke Seluruh Indonesia",
       content: [
         "Penghitungan tarif pengiriman sepeda motor sebenarnya cukup mudah karena mengacu pada beberapa kriteria tertentu. Biasanya biaya kirim motor dihitung per-unit sekaligus berdasarkan kapasitas (cc) mesinnya. Semakin besar ukuran motor maka semakin tinggi cc-nya, dengan demikian semakin besar pula ongkos kirimnya.",
-        "Sprint Express dan jasa ekspedisi lain pada umumnya menggunakan rincian biaya pengiriman motor berdasarkan beberapa kriteria berikut ini:",
+        "SprintCargo dan jasa ekspedisi lain pada umumnya menggunakan rincian biaya pengiriman motor berdasarkan beberapa kriteria berikut ini:",
       ],
     },
     {
       content: [
         <em key="uniqueKey" className="italic">
           Selengkapnya tentang
-          <a href="/mobil" className="text-blue-600">
+          <a href="/mobil" className="text-primary">
             {" "}
             jasa pengiriman mobil.
           </a>
@@ -43,7 +43,7 @@ function Motor() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-secondary">
       <HeroSection
         title="Jasa Pengiriman Motor Murah & Aman"
         description="Kirim Paket Motor Ke Luar Kota Hingga Ke Luar Pulau Via Trucking, Kapal, Container."
@@ -57,7 +57,7 @@ function Motor() {
 
       <section className="py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none" />
+          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
       </section>
 

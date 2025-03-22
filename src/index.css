@@ -1,3 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary: 358 100% 61%; /* Shipper red */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 10%; /* Dark background (almost black) */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 0 0% 18%; /* Dark gray accent */
+  --accent-foreground: 0 0% 100%;
+
+  --background: 0 0% 10%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 10%;
+  --popover-foreground: 0 0% 100%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 70%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 0 0% 20%;
+
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+.prose {
+  max-width: 65ch;
+  color: var(--foreground);
+}
+
+.prose a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose img {
+  border-radius: 0.375rem;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

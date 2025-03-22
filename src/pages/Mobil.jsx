@@ -12,16 +12,16 @@ function Mobil() {
       ],
     },
     {
-      title: "Tarif Kirim Mobil Murah Bersama Cargonesia Express",
+      title: "Tarif Kirim Mobil Murah Bersama SprintCargo",
       content: [
-        "Kirim mobil murah merupakan salah satu layanan unggulan Cargonesia Express. Layanan ini mencakup pengiriman mobil dalam kota, antar kota (Jakarta ke kota lain di Pulau Jawa) dan antar pulau (Jakarta ke provinsi / kota / kabupaten di luar Pulau jawa).",
-        "Cargonesia menyediakan opsi armada pengiriman beragam seperti : Car Carrier, Car Towing dan Self Drive. Selanjutnya ada Kapal Roro dan Cargo Container untuk pengiriman antar provinsi dan antar pulau. Customer bisa memilih mana moda transportasi yang cocok sesuai kebutuhan.",
+        "Kirim mobil murah merupakan salah satu layanan unggulan SprintCargo. Layanan ini mencakup pengiriman mobil dalam kota, antar kota (Jakarta ke kota lain di Pulau Jawa) dan antar pulau (Jakarta ke provinsi / kota / kabupaten di luar Pulau jawa).",
+        "SprintCargo menyediakan opsi armada pengiriman beragam seperti : Car Carrier, Car Towing dan Self Drive. Selanjutnya ada Kapal Roro dan Cargo Container untuk pengiriman antar provinsi dan antar pulau. Customer bisa memilih mana moda transportasi yang cocok sesuai kebutuhan.",
       ],
     },
     {
       title: "1. Pengiriman Mobil via Car Carrier",
       content: [
-        "Untuk pengiriman mobil antar kota, Cargonesia Express menyediakan layanan Car Carrier yaitu menggunakan truk trailer. Untuk sekali pengiriman bisa menampung 1-4 mobil atau bisa lebih.&nbsp;",
+        "Untuk pengiriman mobil antar kota, SprintCargo menyediakan layanan Car Carrier yaitu menggunakan truk trailer. Untuk sekali pengiriman bisa menampung 1-4 mobil atau bisa lebih.&nbsp;",
         "Tarif Car Carrier lebih murah dibanding jenis pengiriman mobil lainnya. Namun begitu estimasi waktu pengiriman bisa lebih lama. Mengapa bisa demikian? Umumnya truk trailer baru diberangkatkan jika kapasitas truk sudah terpenuhi sehingga untuk pengiriman yang sifatnya mendesak Car carrier bukan pilihan yang tepat. ",
       ],
     },
@@ -29,7 +29,7 @@ function Mobil() {
       content: [
         <em key="uniqueKey" className="italic">
           Selengkapnya tentang
-          <a href="/mobil" className="text-blue-600">
+          <a href="/mobil" className="text-primary">
             {" "}
             jasa pengiriman mobil.
           </a>
@@ -41,7 +41,7 @@ function Mobil() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-secondary">
       <HeroSection
         title="Jasa Pengiriman Mobil Murah & Terpercaya Di Jakarta"
         description="Kirim Mobil Aman, Murah & Terpercaya via Car Towing, Car Carrier, Self Drive, Roro & Container."
@@ -55,7 +55,7 @@ function Mobil() {
 
       <section className="py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none" />
+          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
       </section>
 

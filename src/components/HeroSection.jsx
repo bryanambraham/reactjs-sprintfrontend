@@ -13,18 +13,18 @@ const HeroSection = ({
   className = "",
 }) => {
   return (
-    <section className={`relative bg-[#FF6600] overflow-hidden ${className}`}>
+    <section className={`relative bg-secondary overflow-hidden ${className}`}>
       {/* Background circles */}
       {backgroundPattern && (
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -right-1/4 -bottom-1/4 w-2/3 h-2/3 bg-[#ff751a] rounded-full opacity-50" />
-          <div className="absolute -right-1/3 -top-1/4 w-2/3 h-2/3 bg-[#ff751a] rounded-full opacity-50" />
+          <div className="absolute -right-1/4 -bottom-1/4 w-2/3 h-2/3 bg-accent rounded-full opacity-10" />
+          <div className="absolute -right-1/3 -top-1/4 w-2/3 h-2/3 bg-accent rounded-full opacity-10" />
         </div>
       )}
 
-      <div className="container-responsive relative">
+      <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-2 gap-8 items-center py-12 md:py-24">
-          <div className="text-white space-y-6">
+          <div className="text-text-primary space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{title}</h1>
 
             <div className="space-y-4">
@@ -36,7 +36,7 @@ const HeroSection = ({
               <div className="space-y-3">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <Check className="h-5 w-5 text-white" />
+                    <Check className="h-5 w-5 text-primary" />
                     <span>{feature.text}</span>
                   </div>
                 ))}
@@ -46,7 +46,7 @@ const HeroSection = ({
             {button && (
               <a
                 href={button.href}
-                className="inline-block bg-green-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-[#251b8c] transition-colors"
+                className="inline-block bg-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors"
               >
                 {button.text}
               </a>

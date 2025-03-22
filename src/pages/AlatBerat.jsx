@@ -29,7 +29,7 @@ function AlatBerat() {
       content: [
         <em className="italic" key="uniqueKey">
           Selengkapnya tentang
-          <a href="/Mobil" className="text-blue-600">
+          <a href="/mobil" className="text-primary">
             {" "}
             jasa pengiriman mobil.
           </a>
@@ -41,7 +41,7 @@ function AlatBerat() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-secondary">
       <HeroSection
         title="Jasa Pengiriman Alat Berat Murah di Jakarta"
         description=""
@@ -55,7 +55,7 @@ function AlatBerat() {
 
       <section className="py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none" />
+          <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
       </section>
 

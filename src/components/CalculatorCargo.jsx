@@ -26,11 +26,11 @@ const CalculatorCargo = () => {
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg my-12">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">Kalkulator Cargo</h2>
+      <h2 className="text-2xl font-bold text-text-dark mb-4 text-center">Kalkulator Cargo</h2>
       <p className="text-gray-600 mb-4">Cara menghitung berat barang pengiriman melalui ekspedisi cargo.</p>
 
       {/* Input Berat Aktual */}
-      <label className="block font-semibold text-gray-700">Berat Aktual (KG)*</label>
+      <label className="block font-semibold text-text-dark">Berat Aktual (KG)*</label>
       <input
         type="number"
         className="w-full p-2 border rounded mb-3"
@@ -44,7 +44,7 @@ const CalculatorCargo = () => {
       {/* Input Dimensi */}
       <div className="grid grid-cols-3 gap-3">
         <div>
-          <label className="block font-semibold text-gray-700">Panjang (CM)*</label>
+          <label className="block font-semibold text-text-dark">Panjang (CM)*</label>
           <input
             type="number"
             className="w-full p-2 border rounded"
@@ -56,7 +56,7 @@ const CalculatorCargo = () => {
           />
         </div>
         <div>
-          <label className="block font-semibold text-gray-700">Lebar (CM)*</label>
+          <label className="block font-semibold text-text-dark">Lebar (CM)*</label>
           <input
             type="number"
             className="w-full p-2 border rounded"
@@ -68,7 +68,7 @@ const CalculatorCargo = () => {
           />
         </div>
         <div>
-          <label className="block font-semibold text-gray-700">Tinggi (CM)*</label>
+          <label className="block font-semibold text-text-dark">Tinggi (CM)*</label>
           <input
             type="number"
             className="w-full p-2 border rounded"
@@ -82,22 +82,22 @@ const CalculatorCargo = () => {
       </div>
 
       {/* Output Berat Volume */}
-      <div className="mt-4 p-3 bg-gray-100 rounded">
-        <p className="font-semibold text-gray-800">Volume (Kgv):</p>
+      <div className="mt-4 p-3 bg-accent rounded">
+        <p className="font-semibold text-text-dark">Volume (Kgv):</p>
         <p className="text-xl font-bold">{volumeWeight.toFixed(2)} Kgv</p>
         <p className="text-sm text-gray-600">Rumus: (P × L × T) / 4000</p>
       </div>
 
       {/* Output Berat yang Diambil */}
-      <div className="mt-4 p-3 bg-gray-100 rounded">
-        <p className="font-semibold text-gray-800">Berat yang Diambil:</p>
+      <div className="mt-4 p-3 bg-accent rounded">
+        <p className="font-semibold text-text-dark">Berat yang Diambil:</p>
         <p className="text-xl font-bold">{finalWeight.toFixed(2)} KG</p>
         <p className="text-sm text-gray-600">Perbandingan antara Berat Aktual & Volume</p>
       </div>
 
       {/* Output Kubikasi (CBM) */}
-      <div className="mt-4 p-3 bg-gray-100 rounded">
-        <p className="font-semibold text-gray-800">Kubikasi (CBM):</p>
+      <div className="mt-4 p-3 bg-accent rounded">
+        <p className="font-semibold text-text-dark">Kubikasi (CBM):</p>
         <p className="text-xl font-bold">{cbm.toFixed(3)} CBM</p>
         <p className="text-sm text-gray-600">Rumus: (P × L × T) / 1.000.000</p>
       </div>
@@ -106,14 +106,14 @@ const CalculatorCargo = () => {
       <div className="mt-4">
         <label className="inline-flex items-center cursor-pointer">
           <input type="checkbox" className="mr-2" checked={usePacking} onChange={() => setUsePacking(!usePacking)} />
-          <span className="text-gray-800 font-semibold">Tambahkan Packing</span>
+          <span className="text-text-dark font-semibold">Tambahkan Packing</span>
         </label>
       </div>
 
       {/* Output Volume Setelah Packing */}
       {usePacking && (
         <div className="mt-4 p-3 bg-yellow-100 rounded">
-          <p className="font-semibold text-gray-800">Est. Volume Setelah Packing:</p>
+          <p className="font-semibold text-text-dark">Est. Volume Setelah Packing:</p>
           <p className="text-xl font-bold">{packedVolume.toFixed(3)}</p>
           <p className="text-sm text-gray-600">Opsi tambahan jika barang butuh packing</p>
         </div>
@@ -122,7 +122,7 @@ const CalculatorCargo = () => {
       {/* Output Biaya Packing */}
       {usePacking && (
         <div className="mt-4 p-3 bg-yellow-100 rounded">
-          <p className="font-semibold text-gray-800">Est. Biaya Packing:</p>
+          <p className="font-semibold text-text-dark">Est. Biaya Packing:</p>
           <p className="text-xl font-bold">Rp {packingCost.toLocaleString()}</p>
           <p className="text-sm text-gray-600">Perhitungan: Volume Packing × Rp 2000</p>
         </div>

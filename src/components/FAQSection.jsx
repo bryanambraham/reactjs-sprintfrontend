@@ -29,30 +29,30 @@ const FAQSection = () => {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Title */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-2">FAQ</h2>
-          <div className="h-1 w-full bg-[#FF6600]"></div>
+          <h2 className="text-2xl font-bold mb-2 text-text-primary">FAQ</h2>
+          <div className="h-1 w-full bg-primary"></div>
         </div>
 
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-white rounded-lg overflow-hidden">
+            <div key={index} className="bg-accent rounded-lg overflow-hidden">
               <button
-                className="w-full flex justify-between items-center p-4 text-left hover:bg-gray-50 transition-colors"
+                className="w-full flex justify-between items-center p-4 text-left hover:bg-accent-dark transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <span className="font-semibold text-[#1B1464]">{faq.question}</span>
+                <span className="font-semibold text-text-primary">{faq.question}</span>
                 <span className="flex-shrink-0 ml-4">
                   {openIndex === index ? (
-                    <Minus className="h-5 w-5 text-[#FF6600]" />
+                    <Minus className="h-5 w-5 text-primary" />
                   ) : (
-                    <Plus className="h-5 w-5 text-[#FF6600]" />
+                    <Plus className="h-5 w-5 text-primary" />
                   )}
                 </span>
               </button>
@@ -68,7 +68,7 @@ const FAQSection = () => {
                   transition: "transform 0.3s ease-in-out, opacity 0.3s ease-in-out, max-height 0.3s ease-in-out",
                 }}
               >
-                <div className="p-4 pt-0 text-gray-600">{faq.answer}</div>
+                <div className="p-4 pt-0 text-text-secondary">{faq.answer}</div>
               </div>
             </div>
           ))}

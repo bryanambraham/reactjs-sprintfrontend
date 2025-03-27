@@ -86,11 +86,11 @@ const CargoSearch = () => {
         </div>
 
         {/* Tabs Pilihan Transportasi */}
-        <div className="flex justify-center bg-primary hover:bg-secondary/40 py-3 rounded-b-lg">
+        <div className="flex justify-center bg-secondary/70 py-3 rounded-b-lg">
           {["darat", "laut", "udara", "mobil", "ftl", "cargo", "reguler"].map((t) => (
             <button
               key={t}
-              className={`px-6 py-2 mx-2 text-white font-semibold ${type === t ? "bg-primary-dark" : "bg-primary"}`}
+              className={`px-6 py-2 mx-2 text-white font-semibold ${type === t ? "bg-primary-dark" : "bg-secondary"}`}
               onClick={() => handleTypeChange(t)}
             >
               {t === "darat"
@@ -130,7 +130,7 @@ const CargoSearch = () => {
               {filteredDestinations.map((dest, index) => (
                 <li
                   key={index}
-                  className="p-2 hover:bg-white cursor-pointer text-text-dark"
+                  className="p-2 cursor-pointer text-text-dark"
                   onClick={() => handleSelectDestination(dest)}
                 >
                   {dest}

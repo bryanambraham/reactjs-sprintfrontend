@@ -126,11 +126,11 @@ const CargoSearch = () => {
 
           {/* Dropdown hasil autocomplete */}
           {showDropdown && filteredDestinations.length > 0 && (
-            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md text-text-dark">
+            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md">
               {filteredDestinations.map((dest, index) => (
                 <li
                   key={index}
-                  className="p-2 hover:bg-accent cursor-pointer"
+                  className="p-2 hover:bg-white cursor-pointer text-text-dark"
                   onClick={() => handleSelectDestination(dest)}
                 >
                   {dest}

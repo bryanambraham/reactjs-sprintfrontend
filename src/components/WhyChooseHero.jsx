@@ -2,23 +2,23 @@ import { Check } from "lucide-react"
 
 const WhyChooseHero = ({ className = "" }) => {
   return (
-    <section className={`relative bg-primary overflow-hidden py-12 ${className}`}>
+    <section className={`relative bg-primary/40 overflow-hidden py-12 ${className}`}>
       {/* Background circles */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-1/4 -bottom-1/4 w-2/3 h-2/3 bg-primary-light rounded-full opacity-20" />
-        <div className="absolute -right-1/3 -top-1/4 w-2/3 h-2/3 bg-primary-light rounded-full opacity-20" />
+        <div className="absolute -right-1/3 -top-1/4 w-2/3 h-2/3 bg-white rounded-full opacity-20" />
       </div>
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto">
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl font-bold bg-secondary text-white p-4 mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold bg-secondary text-white p-4 mb-8 rounded-sm" data-aos="fade-down">
             Kenapa Harus Pilih SprintCargo?
           </h2>
           <hr className="border-t-4 border-white/20 mt-[-20] max-w-lg" />
           {/* Benefits List */}
           <div className="space-y-6 py-3 text-white">
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="100">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />
               <div>
                 <span className="font-bold">Gratis Jemput Barang</span> Bikin Kamu Gausah Ribet Keluar Rumah Dan Lebih
@@ -26,7 +26,7 @@ const WhyChooseHero = ({ className = "" }) => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="200">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />
               <div>
                 Kirim Barang Makin Aman Dengan{" "}
@@ -36,7 +36,7 @@ const WhyChooseHero = ({ className = "" }) => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="300">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />
               <div>
                 <a href="#" className="underline font-bold hover:text-gray-100">
@@ -46,7 +46,7 @@ const WhyChooseHero = ({ className = "" }) => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2">
+            <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="400">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />
               <div>
                 <a href="#" className="underline font-bold hover:text-gray-100">
@@ -58,7 +58,7 @@ const WhyChooseHero = ({ className = "" }) => {
           </div>
 
           {/* WhatsApp Button with Animated Arrows */}
-          <div className="relative mt-12 flex justify-center items-center">
+          <div className="relative mt-12 flex justify-center items-center" data-aos="zoom-in" data-aos-delay="500">
             {/* Animated Arrows */}
             <div className="absolute -top-16">
               <div className="relative w-24 h-24">

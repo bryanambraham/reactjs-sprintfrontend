@@ -3,8 +3,12 @@ import DescriptionContentBot from "../components/DescriptionContentBot"
 import HeroSection from "../components/HeroSection"
 import WhyChooseHero from "../components/WhyChooseHero"
 import CargoSearch from "../components/CargoSearch"
+import { useScrollAnimation } from "../hooks/usescrollanimation"
 
 function Jawa() {
+  // Initialize scroll animations
+  useScrollAnimation()
+
   const descriptionItemsBot = [
     {
       content: [
@@ -145,16 +149,16 @@ function Jawa() {
       />
 
       <section className="py-6 bg-secondary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl" data-aos="fade-up">
           <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
-        <div className="py-8 mb-8">
+        <div className="py-8 mb-8" data-aos="fade-up" data-aos-delay="200">
           <CargoSearch />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl" data-aos="fade-up" data-aos-delay="300">
           <DescriptionContentBot items={descriptionItemsBot} className="prose prose-lg max-w-none text-text-primary" />
         </div>
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6" data-aos="zoom-in" data-aos-delay="400">
           <button className="my-4 max-w-3xl flex justify-center items-center text-xl p-3 bg-primary rounded-md text-white transition duration-300 ease-in-out transform hover:bg-primary-dark hover:scale-105 shadow-lg">
             <a href="/calculator" className="w-full h-full flex items-center justify-center">
               Calculator Cargo

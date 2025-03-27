@@ -20,10 +20,10 @@ const AboutHero = () => {
   ]
 
   return (
-    <section className="relative min-h-[600px] flex items-center">
+    <section className="relative min-h-[600px] flex items-center" data-aos="zoom-in">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src="/placeholder.svg" alt="Shipping Port" className="object-cover w-full h-full" />
+        <img src="/backgroundabout.jpg" alt="Shipping Port" className="object-cover w-full h-full" />
         <div className="absolute inset-0 bg-secondary/80" /> {/* Dark overlay */}
       </div>
 

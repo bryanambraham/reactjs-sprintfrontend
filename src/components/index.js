@@ -16,6 +16,8 @@ import SiteHeader from "./SiteHeader"
 import CargoSearch from "./CargoSearch"
 import PromoCounter from "./PromoCounter"
 import ServicesGrid from "./ServicesGrid"
+import Layout from "./Layout"
+import PartnerCarousel from "./PartnerCarousel"
 
 export {
   OfficeLocations,
@@ -36,5 +38,7 @@ export {
   CargoSearch,
   PromoCounter,
   ServicesGrid,
+  Layout,
+  PartnerCarousel,
 }
 

@@ -47,8 +47,13 @@ const BlogGrid = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <article key={post.id} className="bg-accent rounded-lg shadow-md overflow-hidden">
+        {posts.map((post, index) => (
+          <article
+            key={post.id}
+            className="bg-accent rounded-lg shadow-md overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
             <a href="#" className="block">
               <div className="relative aspect-[16/9]">
                 <img

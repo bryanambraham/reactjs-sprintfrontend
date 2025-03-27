@@ -10,19 +10,21 @@ const ShippingSolution = () => {
     setIsPlaying(true)
   }
 
-  const youtubeVideoId = "OnGbs4SRi1Y" // ID Video YouTube
-
   return (
     <section className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center relative">
           {/* Left side - Image and Video */}
-          <div className="relative w-full">
+          <div className="relative w-full" data-aos="fade-right">
             {/* Staff Image */}
-            <img src="/staff.jpg" alt="SprintCargo Staff" className="object-cover w-full h-full rounded-lg" />
+            <img src="/staffsprint.jpg" alt="SprintCargo Staff" className="object-cover w-1/2 rounded-lg" />
 
             {/* Video Thumbnail / Player */}
-            <div className="absolute bottom-[-40px] left-10 w-[350px] sm:w-[400px] rounded-lg overflow-hidden shadow-lg">
+            <div
+              className="absolute bottom-[-40px] left-10 w-[350px] sm:w-[400px] rounded-lg overflow-hidden shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               {!isPlaying ? (
                 <div className="relative w-full h-full">
                   <img
@@ -54,7 +56,7 @@ const ShippingSolution = () => {
           </div>
 
           {/* Right side - Content */}
-          <div className="text-text-primary">
+          <div className="text-text-primary" data-aos="fade-left">
             <h2 className="text-4xl font-bold mb-12">
               Solusi Kirim Barang
               <br />
@@ -63,7 +65,7 @@ const ShippingSolution = () => {
 
             <div className="space-y-12">
               {/* Murah */}
-              <div className="flex gap-6">
+              <div className="flex gap-6" data-aos="fade-up" data-aos-delay="100">
                 <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <CreditCard className="w-6 h-6 text-primary" />
                 </div>
@@ -77,7 +79,7 @@ const ShippingSolution = () => {
               </div>
 
               {/* Mudah */}
-              <div className="flex gap-6">
+              <div className="flex gap-6" data-aos="fade-up" data-aos-delay="200">
                 <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <Package className="w-6 h-6 text-primary" />
                 </div>
@@ -92,7 +94,7 @@ const ShippingSolution = () => {
               </div>
 
               {/* Menyenangkan */}
-              <div className="flex gap-6">
+              <div className="flex gap-6" data-aos="fade-up" data-aos-delay="300">
                 <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <MessageSquare className="w-6 h-6 text-primary" />
                 </div>
@@ -107,7 +109,7 @@ const ShippingSolution = () => {
             </div>
 
             {/* Contact Button */}
-            <div className="flex justify-center mt-12">
+            <div className="flex justify-center mt-12" data-aos="fade-up" data-aos-delay="400">
               <a
                 href="https://wa.me/6285282656556"
                 className="bg-primary text-white px-8 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors"

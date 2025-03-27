@@ -3,11 +3,11 @@ const DescriptionContentBot = ({ items, className = "" }) => {
     <div className={`space-y-6 ${className}`}>
       {items.map((item, index) => (
         <div key={index} className="space-y-3">
-          {item.title && <h4 className="text-lg md:text-xl font-semibold text-text-dark">{item.title}</h4>}
+          {item.title && <h4 className="text-lg md:text-xl font-semibold text-text-primary">{item.title}</h4>}
           {item.content &&
             item.content.map((paragraph, pIndex) =>
               typeof paragraph === "string" ? (
-                <p key={pIndex} className="text-gray-700 leading-relaxed">
+                <p key={pIndex} className="text-text-secondary leading-relaxed">
                   {paragraph}
                 </p>
               ) : (
@@ -17,7 +17,7 @@ const DescriptionContentBot = ({ items, className = "" }) => {
           {item.list && item.list.length > 0 && (
             <ul className="list-disc pl-5 space-y-2">
               {item.list.map((listItem, lIndex) => (
-                <li key={lIndex} className="text-gray-700 leading-relaxed">
+                <li key={lIndex} className="text-text-primary/70 leading-relaxed">
                   {listItem}
                 </li>
               ))}

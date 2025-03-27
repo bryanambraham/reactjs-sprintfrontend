@@ -16,7 +16,7 @@ const OfficeLocations = () => {
     <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="relative inline-block">
             <h2 className="text-3xl font-bold text-text-primary">KANTOR & CABANG SPRINTCARGO</h2>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-primary -mb-2"></div>
@@ -29,6 +29,8 @@ const OfficeLocations = () => {
             <div
               key={index}
               className="bg-accent rounded-lg shadow-lg p-8 flex flex-col items-center text-center space-y-4"
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
             >
               {/* Logo */}
               <div className="w-48 h-24 relative">

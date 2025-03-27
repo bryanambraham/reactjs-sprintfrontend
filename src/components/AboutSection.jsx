@@ -3,13 +3,13 @@ const AboutSection = () => {
     <section className="container mx-auto px-4 py-16">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Text Content */}
-        <div className="lg:w-1/2 space-y-6">
+        <div className="lg:w-1/2 space-y-6" data-aos="fade-right">
           <div className="relative block text-center">
             <h2 className="text-3xl font-bold">TENTANG SPRINTCARGO</h2>
-            <div className="absolute bottom-0 left-1/2 w-1/2 h-1 bg-secondary -mb-2 transform -translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-1/2 w-1/2 h-1 bg-primary -mb-2 transform -translate-x-1/2"></div>
           </div>
 
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4 text-text-primary">
             <p>
               SprintCargo adalah perusahaan ekspedisi yang melayani pengiriman barang ke seluruh penjuru Indonesia. Kami
               memastikan setiap kiriman tiba tepat waktu dan aman, dari kota besar hingga daerah terpencil.
@@ -37,19 +37,21 @@ const AboutSection = () => {
         </div>
 
         {/* Image Section */}
-        <div className="lg:w-1/2 relative">
+        <div className="lg:w-1/2 relative" data-aos="fade-left" data-aos-delay="200">
           <div className="relative w-full aspect-square max-w-[500px] mx-auto">
             {/* Orange Blob Background */}
             <div className="absolute inset-0 bg-primary rounded-full transform -rotate-12"></div>
 
             {/* Image */}
             <div className="relative z-10 mt-12">
-              <img src="/staff.jpg" alt="Staff" className="object-cover w-full h-full" />
+              <div className="aspect-square rounded-md overflow-hidden">
+                <img src="/staff2.jpg" alt="Staff" className="object-cover w-full h-full" />
+              </div>
             </div>
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-4" data-aos="fade-up" data-aos-delay="300">
             <a
-              href="/AboutUs"
+              href="/About"
               className="bg-primary text-text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
             >
               TENTANG SPRINTCARGO

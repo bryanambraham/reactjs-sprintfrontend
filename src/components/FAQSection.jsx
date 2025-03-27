@@ -32,7 +32,7 @@ const FAQSection = () => {
     <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4 max-w-3xl">
         {/* Title */}
-        <div className="mb-8">
+        <div className="mb-8" data-aos="fade-up">
           <h2 className="text-2xl font-bold mb-2 text-text-primary">FAQ</h2>
           <div className="h-1 w-full bg-primary"></div>
         </div>
@@ -40,7 +40,12 @@ const FAQSection = () => {
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-accent rounded-lg overflow-hidden">
+            <div
+              key={index}
+              className="bg-accent rounded-lg overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <button
                 className="w-full flex justify-between items-center p-4 text-left hover:bg-accent-dark transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}

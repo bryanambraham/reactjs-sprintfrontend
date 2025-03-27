@@ -18,17 +18,28 @@ export function SiteFooter() {
             <div className="space-y-2">
               <div className="flex items-start">
                 <MapPin size={18} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                <span className="text-text-secondary">
-                  Jalan Kangkung Nomor 4, Cipulir, Kebayoran Lama, Jakarta Selatan
-                </span>
+                <a href="https://www.google.com/maps?q=Jl+Pasar+Kebayoran+Lama+No+20,+Kebayoran+Lama,+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta+12230" target="_blank" rel="noopener noreferrer" className="hover:text-[#DE1F26]">
+                  <span className="text-text-secondary">
+                    Jl Pasar Kebayoran Lama No 20, <br /> Kebayoran Lama, Jakarta Selatan, <br /> Daerah Khusus Ibukota Jakarta 12230
+                  </span>
+                </a>
               </div>
               <div className="flex items-center">
                 <Phone size={18} className="text-primary mr-2 flex-shrink-0" />
-                <span className="text-text-secondary">(021) 27092288</span>
+                <a href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.">
+                <span className="text-text-secondary">+62 852-8265-6556</span></a>
               </div>
               <div className="flex items-center">
                 <Mail size={18} className="text-primary mr-2 flex-shrink-0" />
-                <span className="text-text-secondary">info@sprintcargo.id</span>
+                <a href="mailto:marketing@sprintcargo.id" className="text-gray-600 hover:underline hover:text-[#DE1F26]">
+                  <span className="text-text-secondary">marketing@sprintcargo.id</span>
+                </a>
+              </div>
+              <div className="flex items-center">
+                <Mail size={18} className="text-primary mr-2 flex-shrink-0" />
+                <a href="mailto:cs@sprintcargo.id" className="text-gray-600 hover:underline hover:text-[#DE1F26]">
+                  <span className="text-text-secondary">cs@sprintcargo.id</span>
+                </a>
               </div>
             </div>
           </div>
@@ -38,27 +49,32 @@ export function SiteFooter() {
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/barang" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/barang" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Pengiriman Barang
                 </Link>
               </li>
               <li>
-                <Link to="/mobil" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/mobil" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Pengiriman Mobil
                 </Link>
               </li>
               <li>
-                <Link to="/motor" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/motor" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Pengiriman Motor
                 </Link>
               </li>
               <li>
-                <Link to="/alatberat" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/alatberat" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Pengiriman Alat Berat
                 </Link>
               </li>
               <li>
-                <Link to="/calculator" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/calculator" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Calculator Cargo
                 </Link>
               </li>
@@ -70,24 +86,30 @@ export function SiteFooter() {
             <h3 className="text-lg font-semibold mb-4">Destinations</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/jawa" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/jawa" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Jawa
                 </Link>
               </li>
               <li>
-                <Link to="/bali" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/bali" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Bali
                 </Link>
               </li>
               <li>
-                <Link to="/kalimantan" className="text-text-secondary hover:text-primary transition-colors">
+                <Link to="/kalimantan" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
                   Kalimantan
                 </Link>
               </li>
               <li>
-                <Link to="/maluku" className="text-text-secondary hover:text-primary transition-colors">
-                  Maluku
+                <Link to="/sumatera" className="text-text-secondary hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}>
+                  Sumatera
                 </Link>
+              </li>
+              <li>
               </li>
             </ul>
           </div>
@@ -102,7 +124,7 @@ export function SiteFooter() {
               <a href="#" className="text-text-secondary hover:text-primary transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-text-secondary hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/sprintcargo.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-text-secondary hover:text-primary transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="#" className="text-text-secondary hover:text-primary transition-colors">
@@ -135,10 +157,12 @@ export function SiteFooter() {
               &copy; {new Date().getFullYear()} SprintCargo. All rights reserved.
             </p>
             <div className="flex space-x-4">
-              <Link to="/privacy" className="text-text-secondary hover:text-primary text-sm transition-colors">
+              <Link to="/privacy" className="text-text-secondary hover:text-primary text-sm transition-colors"
+              onClick={() => setIsMenuOpen(false)}>
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-text-secondary hover:text-primary text-sm transition-colors">
+              <Link to="/terms" className="text-text-secondary hover:text-primary text-sm transition-colors"
+              onClick={() => setIsMenuOpen(false)}>
                 Terms of Service
               </Link>
             </div>

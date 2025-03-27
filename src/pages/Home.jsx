@@ -2,8 +2,12 @@ import AboutSection from "../components/AboutSection"
 import OfficeLocations from "../components/OfficeLocations"
 import HeroSection from "../components/HeroSection"
 import ServicesGrid from "../components/ServicesGrid"
+import { useScrollAnimation } from "../hooks/usescrollanimation"
 
 function Home() {
+  // Initialize scroll animations
+  useScrollAnimation()
+
   return (
     <div className="bg-secondary">
       <HeroSection
@@ -20,11 +24,11 @@ function Home() {
           href: "/cek-ongkir",
         }}
         certifications={[
-          { imageUrl: "/placeholder.svg", alt: "ISO 9001:2015" },
-          { imageUrl: "/placeholder.svg", alt: "TUV Certification" },
+          { imageUrl: "/certif.png", alt: "Certification"},
+          // { imageUrl: "/placeholder.svg", alt: "TUV Certification" },
         ]}
-        imageUrl="/staff.jpg"
-        imageAlt="Cargo Staff"
+        imageUrl="/deliverbarang.jpg"
+        imageAlt="Deliver"
       />
 
       <AboutSection />

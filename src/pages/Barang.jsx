@@ -176,7 +176,7 @@ function Barang() {
           "Cargonesia Express Jakarta : Jalan Kangkung Nomor 4, Cipulir, Kebayoran Lama, Jakarta Selatan.",
           "Telepon : (021) 27092288",
           "Melayani jemput barang JABODETABEK dan layanan GRATIS jemput barang area :",
-            <h3 className='text-bold min-w-fit italic text-gray-800'>Jakarta Pusat:</h3>,
+            <h3 className='text-bold min-w-fit italic text-text-primary'>Jakarta Pusat:</h3>,
             <p className='max-w-auto'>Cempaka Putih, Gambir, Johar Baru, Kemayoran, Menteng, Sawah Besar, Senen, Tanah Abang.</p>,
         ]
       },
@@ -199,7 +199,7 @@ function Barang() {
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <HeroSection
         title="Jasa Ekspedisi Murah Jakarta Ke Berbagai Wilayah Indonesia"
         description="Jasa ekspedisi murah di Jakarta untuk pengiriman cargo ke berbagai wilayah Indonesia."
@@ -212,9 +212,9 @@ function Barang() {
         ]}
         button={{
           text: "Hubungi CS Kami",
-          href: "/#",
+          href: "https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.",
         }}
-        imageUrl="/ekspedisi.png"
+        imageUrl="/barang.jpg"
         imageAlt="Hero PIC"
       />
 

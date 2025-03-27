@@ -50,7 +50,7 @@ const ServicesGrid = () => {
     <section className="py-16 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="relative inline-block">
             <h2 className="text-3xl font-bold text-text-primary">LAYANAN EKSPEDISI SPRINTCARGO</h2>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-primary -mb-2"></div>
@@ -60,8 +60,8 @@ const ServicesGrid = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <a key={index} href={service.href}>
-              <div className="bg-accent rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <a key={index} href={service.href} data-aos="fade-up" data-aos-delay={index * 100}>
+              <div className="bg-accent rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
                 <div className="flex flex-col items-center text-center space-y-4">
                   {/* Icon */}
                   <div className={`${service.color} p-4 rounded-full text-white`}>{service.icon}</div>
@@ -78,7 +78,7 @@ const ServicesGrid = () => {
         </div>
 
         {/* Contact Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
           <a
             href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong."
             className="inline-flex items-center bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"

@@ -5,8 +5,8 @@ import WhyChooseHero  from "../components/WhyChooseHero"
 
 function About() {
   return (
-    <div className="min-h-screen bg-white">
-      <AboutHero />
+    <div className="min-h-screen">
+      <AboutHero  />
       <VisionMission />
       <ShippingSolution />
       <WhyChooseHero />

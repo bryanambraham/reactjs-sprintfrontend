@@ -28,8 +28,11 @@ export function SiteHeader() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Truck size={28} className="text-primary" />
-            <span className="text-text-primary font-bold text-xl">SprintCargo</span>
+            {/* <Truck size={28} className="text-primary" /> */}
+            <div className="relative w-auto h-14">
+                <img src="/sprintlogo.png" alt="SprintCargo Logo" className="w-full h-full object-contain" />
+              </div>
+            {/* <span className="text-text-primary font-bold text-xl">SprintCargo</span> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -107,8 +110,8 @@ export function SiteHeader() {
                 >
                   Kalimantan
                 </Link>
-                <Link to="/maluku" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
-                  Maluku
+                <Link to="/sumatera" className="block px-4 py-2 text-text-primary hover:bg-secondary hover:text-primary">
+                  Sumatera
                 </Link>
               </div>
             </div>
@@ -228,11 +231,11 @@ export function SiteHeader() {
                     Kalimantan
                   </Link>
                   <Link
-                    to="/maluku"
+                    to="/sumatera"
                     className="block text-text-secondary hover:text-primary"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Maluku
+                    Sumatera
                   </Link>
                 </div>
               </div>

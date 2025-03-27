@@ -1,8 +1,13 @@
 import DescriptionContent from "../components/DescriptionContent"
 import HeroSection from "../components/HeroSection"
 import WhyChooseHero from "../components/WhyChooseHero"
+import { useScrollAnimation } from "../hooks/usescrollanimation"
+
 
 function Mobil() {
+  // Initialize scroll animations
+  useScrollAnimation()
+
   const descriptionItems = [
     {
       content: [
@@ -28,7 +33,6 @@ function Mobil() {
     {
       content: [
         <em key="uniqueKey" className="italic">
-          Selengkapnya tentang
           <a href="/mobil" className="text-primary">
             {" "}
             jasa pengiriman mobil.
@@ -54,7 +58,7 @@ function Mobil() {
       />
 
       <section className="py-6">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl" data-aos="fade-up">
           <DescriptionContent items={descriptionItems} className="prose prose-lg max-w-none text-text-primary" />
         </div>
       </section>

@@ -11,8 +11,8 @@ function Home() {
   return (
     <div className="bg-secondary">
       <HeroSection
-        title="Layanan Pengiriman Barang dari Jakarta ke Seluruh Indonesia dengan SprintCargo"
-        description="SprintCargo menyediakan layanan pengiriman barang antar pulau dengan jangkauan ke Kalimantan, Sumatera, Sulawesi, Nusa Tenggara, Maluku, dan Papua."
+        title="Layanan Pengiriman Barang dari Jakarta ke Seluruh Indonesia dengan Sprint Cargo"
+        description="Sprint Cargo menyediakan layanan pengiriman barang antar pulau dengan jangkauan ke Kalimantan, Sumatera, Sulawesi, Nusa Tenggara, Maluku, dan Papua."
         subDescription="Jemput barang gratis di area DKI Jakarta dengan jaminan keamanan pengiriman!"
         features={[
           { text: "Pengiriman Barang Hemat Biaya" },

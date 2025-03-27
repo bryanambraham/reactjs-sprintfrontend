@@ -52,7 +52,7 @@ const ServicesGrid = () => {
         {/* Title */}
         <div className="text-center mb-12" data-aos="fade-up">
           <div className="relative inline-block">
-            <h2 className="text-3xl font-bold text-text-primary">LAYANAN EKSPEDISI SPRINTCARGO</h2>
+            <h2 className="text-3xl font-bold text-text-primary">LAYANAN EKSPEDISI SPRINT CARGO</h2>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-primary -mb-2"></div>
           </div>
         </div>

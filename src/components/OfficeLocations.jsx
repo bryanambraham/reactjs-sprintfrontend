@@ -1,12 +1,12 @@
 const OfficeLocations = () => {
   const offices = [
     {
-      name: "SprintCargo Jakarta",
+      name: "Sprint Cargo Jakarta",
       address: "Jl Pasar Kebayoran Lama No 20, Kebayoran Lama , Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12230",
       phone: "+62 852-8265-6556",
     },
     {
-      name: "SprintCargo Jakarta",
+      name: "Sprint Cargo Jakarta",
       address: "Jl Pasar Kebayoran Lama No 20, Kebayoran Lama , Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12230",
       phone: "+62 852-8265-6556",
     },
@@ -18,7 +18,7 @@ const OfficeLocations = () => {
         {/* Title */}
         <div className="text-center mb-12" data-aos="fade-up">
           <div className="relative inline-block">
-            <h2 className="text-3xl font-bold text-text-primary">KANTOR & CABANG SPRINTCARGO</h2>
+            <h2 className="text-3xl font-bold text-text-primary">KANTOR & CABANG SPRINT CARGO</h2>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-primary -mb-2"></div>
           </div>
         </div>

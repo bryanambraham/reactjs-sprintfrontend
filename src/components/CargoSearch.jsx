@@ -115,7 +115,7 @@ const CargoSearch = () => {
         <div className="relative mt-4">
           <input
             type="text"
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md text-text-dark"
             placeholder="Masukkan Tujuan..."
             value={destination}
             onChange={handleInputChange}
@@ -143,27 +143,27 @@ const CargoSearch = () => {
         {/* Hasil Pencarian */}
         {cargoData.length > 0 ? (
           <div className="mt-6 bg-primary rounded-lg shadow-md">
-            <div className="bg-primary-dark text-white p-3 text-lg font-bold flex justify-between">
+            <div className="bg-primary-dark text-text-dark p-3 text-lg font-bold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
             <div className="bg-white p-4">
               <p className="font-semibold">
-                Minimum Charge: <span className="text-gray-700">{cargoData[0].min_charge || "N/A"}</span>
+                Minimum Charge: <span className="text-text-dark">{cargoData[0].min_charge || "-"}</span>
               </p>
               <p className="font-semibold">
-                Estimasi: <span className="text-gray-700">{cargoData[0].estimasi} </span>Hari
+                Estimasi: <span className="text-text-dark">{cargoData[0].estimasi} </span>Hari
               </p>
               <p className="font-semibold">
-                Tarif: <span className="text-gray-700">{cargoData[0].tarif || "N/A"} </span>
+                Tarif: <span className="text-text-dark">{cargoData[0].tarif || "-"} </span>
               </p>
               <p className="font-semibold">
-                CDE: <span className="text-gray-700">{cargoData[0].cde || " N/A"}</span>
+                CDE: <span className="text-text-dark">{cargoData[0].cde || " -"}</span>
               </p>
               <p className="font-semibold">
-                CDD: <span className="text-gray-700">{cargoData[0].cdd || " N/A"}</span>
+                CDD: <span className="text-text-dark">{cargoData[0].cdd || "-"}</span>
               </p>
               <p className="font-semibold">
-                CDD Long: <span className="text-gray-700">{cargoData[0].cdd_long || "N/A"}</span>
+                CDD Long: <span className="text-text-dark">{cargoData[0].cdd_long || "-"}</span>
               </p>
             </div>
 

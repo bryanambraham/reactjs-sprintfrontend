@@ -86,7 +86,7 @@ const CargoSearch = () => {
         </div>
 
         {/* Tabs Pilihan Transportasi */}
-        <div className="flex justify-center bg-primary py-3 rounded-b-lg">
+        <div className="flex justify-center bg-primary hover:bg-secondary/40 py-3 rounded-b-lg">
           {["darat", "laut", "udara", "mobil", "ftl", "cargo", "reguler"].map((t) => (
             <button
               key={t}
@@ -146,24 +146,24 @@ const CargoSearch = () => {
             <div className="bg-primary-dark text-text-dark p-3 text-lg font-bold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
-            <div className="bg-white p-4">
+            <div className="bg-white p-4 text-text-dark">
               <p className="font-semibold">
-                Minimum Charge: <span className="text-text-dark">{cargoData[0].min_charge || "-"}</span>
+                Minimum Charge: <span>{cargoData[0].min_charge || "-"}</span>
               </p>
               <p className="font-semibold">
-                Estimasi: <span className="text-text-dark">{cargoData[0].estimasi} </span>Hari
+                Estimasi: <span>{cargoData[0].estimasi} </span>Hari
               </p>
               <p className="font-semibold">
-                Tarif: <span className="text-text-dark">{cargoData[0].tarif || "-"} </span>
+                Tarif: <span>{cargoData[0].tarif || "-"} </span>
               </p>
               <p className="font-semibold">
-                CDE: <span className="text-text-dark">{cargoData[0].cde || " -"}</span>
+                CDE: <span>{cargoData[0].cde || " -"}</span>
               </p>
               <p className="font-semibold">
-                CDD: <span className="text-text-dark">{cargoData[0].cdd || "-"}</span>
+                CDD: <span>{cargoData[0].cdd || "-"}</span>
               </p>
               <p className="font-semibold">
-                CDD Long: <span className="text-text-dark">{cargoData[0].cdd_long || "-"}</span>
+                CDD Long: <span>{cargoData[0].cdd_long || "-"}</span>
               </p>
             </div>
 

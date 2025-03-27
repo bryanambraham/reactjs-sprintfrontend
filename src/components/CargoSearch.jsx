@@ -126,7 +126,7 @@ const CargoSearch = () => {
 
           {/* Dropdown hasil autocomplete */}
           {showDropdown && filteredDestinations.length > 0 && (
-            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md">
+            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md text-text-dark">
               {filteredDestinations.map((dest, index) => (
                 <li
                   key={index}

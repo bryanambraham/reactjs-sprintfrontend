@@ -112,7 +112,7 @@ const CargoSearch = () => {
         </div>
 
         {/* Input Pencarian dengan Autocomplete */}
-        <div className="relative mt-4">
+        <div className="absolute mt-4">
           <input
             type="text"
             className="w-full p-2 border rounded-md text-text-dark"
@@ -143,7 +143,7 @@ const CargoSearch = () => {
         {/* Hasil Pencarian */}
         {cargoData.length > 0 ? (
           <div className="mt-6 bg-secondary rounded-lg shadow-md">
-            <div className="bg-secondary/80 text-text-dark p-3 text-lg font-bold flex justify-between">
+            <div className="bg-secondary/80 text-text-primary p-3 text-lg font-bold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
             <div className="bg-white p-4 text-text-dark">

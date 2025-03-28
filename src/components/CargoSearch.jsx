@@ -168,7 +168,7 @@ const CargoSearch = () => {
           <input
             ref={inputRef}
             type="text"
-            className="w-full p-2 border rounded-md"
+            className="w-full p-2 border rounded-md text-text-dark"
             placeholder="Masukkan Tujuan..."
             value={destination}
             onChange={handleInputChange}
@@ -178,7 +178,7 @@ const CargoSearch = () => {
               }
             }}
           />
-          <button onClick={searchCargo} className="absolute right-2 top-2 text-gray-600">
+          <button onClick={searchCargo} className="absolute right-2 top-2 text-text-dark">
             🔍
           </button>
 
@@ -201,7 +201,7 @@ const CargoSearch = () => {
                   {filteredDestinations.map((dest, index) => (
                     <li
                       key={index}
-                      className="p-2 hover:bg-gray-100 cursor-pointer text-gray-800"
+                      className="p-2 hover:bg-gray-100 cursor-pointer text-text-dark"
                       onClick={() => handleSelectDestination(dest)}
                     >
                       {dest}
@@ -216,7 +216,7 @@ const CargoSearch = () => {
         {/* Hasil Pencarian */}
         {cargoData.length > 0 ? (
           <div className="mt-6 bg-secondary/80 rounded-lg shadow-md">
-            <div className="bg-primary-dark text-text-secondary p-3 text-lg font-semibold flex justify-between">
+            <div className="bg-primary-dark text-text-dark p-3 text-lg font-semibold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
             <div className="bg-white p-4 text-text-dark">

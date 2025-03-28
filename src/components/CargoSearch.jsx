@@ -130,7 +130,7 @@ const CargoSearch = () => {
               {filteredDestinations.map((dest, index) => (
                 <li
                   key={index}
-                  className="p-2 cursor-pointer text-text-dark"
+                  className="p-2 cursor-pointer text-text-dark z-50"
                   onClick={() => handleSelectDestination(dest)}
                 >
                   {dest}

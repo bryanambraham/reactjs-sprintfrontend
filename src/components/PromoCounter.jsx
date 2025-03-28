@@ -14,17 +14,17 @@ const PromoCounter = () => {
     {
       description: "Info seputar promo, jadwal, ongkor kirim ke Kalimantan, bisa hubungi CS",
       contact: "https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.",
-      cektarif: "#cargo-search",
+      cektarif: "/kalimantan",
     },
     {
       description: "Info seputar promo, jadwal, ongkor kirim ke Sumatera, bisa hubungi CS",
       contact: "https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.",
-      cektarif: "#cargo-search",
+      cektarif: "/sumatera",
     },
     {
       description: "Info seputar promo, jadwal, ongkor kirim ke Bali, bisa hubungi CS",
       contact: "https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.",
-      cektarif: "#cargo-search",
+      cektarif: "/bali",
     },
   ]
 
@@ -58,7 +58,7 @@ const PromoCounter = () => {
         {/* Cek Ongkir */}
         <div className="text-center mb-8">
           <a
-            href="#"
+            href="/calculator"
             className="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
           >
             Ayo Cek Ongkir dan Gunakan Kalkulator Cargo!
@@ -110,7 +110,7 @@ const PromoCounter = () => {
                   href={destination.cektarif}
                   className="inline-flex items-center border-2 border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors"
                 >
-                  Cek Ongkir
+                  More
                 </a>
               </div>
             </div>

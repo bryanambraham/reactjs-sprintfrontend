@@ -15,6 +15,7 @@ import Sumatera from './pages/Sumatera';
 import Promo from './pages/Promo';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Ongkir from './pages/Ongkir';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="sumatera" element={<Sumatera />} />
           <Route path="kalimantan" element={<Kalimantan />} />
           <Route path="calculator" element={<Calculator />} />
+          <Route path="ongkir" element={<Ongkir />} />
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<BlogPost />} />

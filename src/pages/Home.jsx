@@ -21,7 +21,7 @@ function Home() {
         ]}
         button={{
           text: "CEK ONGKIR",
-          href: "/cek-ongkir",
+          href: "/ongkir",
         }}
         certifications={[
           { imageUrl: "/certif.png", alt: "Certification"},

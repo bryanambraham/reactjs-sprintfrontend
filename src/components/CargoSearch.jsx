@@ -1,37 +1,15 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { createPortal } from "react-dom"
+import { useState, useEffect } from "react"
 
 const CargoSearch = () => {
   const [cargoData, setCargoData] = useState([])
   const [type, setType] = useState("darat")
   const [destination, setDestination] = useState("")
-  const [selectedDestination, setSelectedDestination] = useState("")
+  const [selectedDestination, setSelectedDestination] = useState("") // ✅ State tambahan
   const [allDestinations, setAllDestinations] = useState([])
   const [filteredDestinations, setFilteredDestinations] = useState([])
   const [showDropdown, setShowDropdown] = useState(false)
-  const inputRef = useRef(null)
-  const dropdownRef = useRef(null)
-  const [portalContainer, setPortalContainer] = useState(null)
-
-  // Set up portal container
-  useEffect(() => {
-    const div = document.createElement("div")
-    div.style.position = "fixed"
-    div.style.top = "0"
-    div.style.left = "0"
-    div.style.width = "100%"
-    div.style.height = "0"
-    div.style.overflow = "visible"
-    div.style.zIndex = "9999"
-    document.body.appendChild(div)
-    setPortalContainer(div)
-
-    return () => {
-      document.body.removeChild(div)
-    }
-  }, [])
 
   // Fetch daftar tujuan ketika komponen dimuat
   useEffect(() => {
@@ -48,30 +26,11 @@ const CargoSearch = () => {
     fetchDestinations()
   }, [type])
 
-  // Handle click outside to close dropdown
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        inputRef.current &&
-        !inputRef.current.contains(event.target) &&
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
-        setShowDropdown(false)
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
-
   // Reset data jika type berubah
   const handleTypeChange = (newType) => {
     setType(newType)
     setDestination("")
-    setSelectedDestination("")
+    setSelectedDestination("") // ✅ Reset selectedDestination
     setCargoData([])
     setShowDropdown(false)
   }
@@ -80,7 +39,7 @@ const CargoSearch = () => {
   const handleInputChange = (e) => {
     const input = e.target.value.toLowerCase()
     setDestination(input)
-    setSelectedDestination("")
+    setSelectedDestination("") // ✅ Reset jika mengetik manual
 
     if (input.length > 0) {
       const filtered = allDestinations.filter((dest) => dest.toLowerCase().includes(input))
@@ -94,14 +53,15 @@ const CargoSearch = () => {
   // Fungsi untuk memilih tujuan dari dropdown
   const handleSelectDestination = (selected) => {
     setDestination(selected)
-    setSelectedDestination(selected)
+    setSelectedDestination(selected) // ✅ Menyimpan tujuan yang valid
     setShowDropdown(false)
   }
 
   // Fungsi untuk mencari cargo berdasarkan tujuan yang dipilih
   const searchCargo = async () => {
     if (!destination.trim() || destination !== selectedDestination) {
-      setCargoData([])
+      // ✅ Validasi tambahan
+      setCargoData([]) // Kosongkan data jika input tidak valid
       setShowDropdown(false)
       return
     }
@@ -117,28 +77,16 @@ const CargoSearch = () => {
     }
   }
 
-  // Calculate dropdown position
-  const getDropdownPosition = () => {
-    if (!inputRef.current) return { top: 0, left: 0, width: 0 }
-
-    const rect = inputRef.current.getBoundingClientRect()
-    return {
-      top: rect.bottom + window.scrollY,
-      left: rect.left + window.scrollX,
-      width: rect.width,
-    }
-  }
-
   return (
     <div className="w-full flex justify-center" id="cargo-search">
       <div className="max-w-3xl w-full bg-white rounded-lg shadow-md px-4">
         {/* Header */}
-        <div className="bg-secondary text-text-primary text-center py-4 rounded-t-lg mt-4">
+        <div className="mt-4 bg-secondary text-text-primary text-center py-4 rounded-t-lg">
           <h1 className="text-xl font-semibold">Butuh Info Ongkos Kirim Cargo?</h1>
         </div>
 
         {/* Tabs Pilihan Transportasi */}
-        <div className="flex justify-center bg-secondary/80 py-3 rounded-b-lg">
+        <div className="flex justify-center bg-secondary/70 py-3 rounded-b-lg">
           {["darat", "laut", "udara", "mobil", "ftl", "cargo", "reguler"].map((t) => (
             <button
               key={t}
@@ -166,82 +114,62 @@ const CargoSearch = () => {
         {/* Input Pencarian dengan Autocomplete */}
         <div className="relative mt-4">
           <input
-            ref={inputRef}
             type="text"
             className="w-full p-2 border rounded-md text-text-dark"
             placeholder="Masukkan Tujuan..."
             value={destination}
             onChange={handleInputChange}
-            onClick={() => {
-              if (destination.length > 0 && filteredDestinations.length > 0) {
-                setShowDropdown(true)
-              }
-            }}
           />
-          <button onClick={searchCargo} className="absolute right-2 top-2 text-text-dark">
+          <button onClick={searchCargo} className="absolute right-2 top-2 text-gray-600">
             🔍
           </button>
 
-          {/* Dropdown hasil autocomplete - rendered in portal */}
-          {showDropdown &&
-            filteredDestinations.length > 0 &&
-            portalContainer &&
-            createPortal(
-              <div
-                ref={dropdownRef}
-                style={{
-                  position: "absolute",
-                  top: `${getDropdownPosition().top}px`,
-                  left: `${getDropdownPosition().left}px`,
-                  width: `${getDropdownPosition().width}px`,
-                  zIndex: 9999,
-                }}
-              >
-                <ul className="bg-white border rounded-md shadow-lg max-h-40 overflow-y-auto">
-                  {filteredDestinations.map((dest, index) => (
-                    <li
-                      key={index}
-                      className="p-2 hover:bg-gray-100 cursor-pointer text-text-dark"
-                      onClick={() => handleSelectDestination(dest)}
-                    >
-                      {dest}
-                    </li>
-                  ))}
-                </ul>
-              </div>,
-              portalContainer,
-            )}
+          {/* Dropdown hasil autocomplete */}
+          {showDropdown && filteredDestinations.length > 0 && (
+            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md z-50">
+              {filteredDestinations.map((dest, index) => (
+                <li
+                  key={index}
+                  className="p-2 cursor-pointer text-text-dark z-50"
+                  onClick={() => handleSelectDestination(dest)}
+                >
+                  {dest}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {/* Hasil Pencarian */}
         {cargoData.length > 0 ? (
-          <div className="mt-6 bg-secondary/80 rounded-lg shadow-md">
-            <div className="bg-primary-dark text-text-dark p-3 text-lg font-semibold flex justify-between">
+          <div className="mt-6 bg-secondary rounded-lg shadow-md">
+            <div className="bg-secondary/80 text-text-dark p-3 text-lg font-bold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
             <div className="bg-white p-4 text-text-dark">
               <p className="font-semibold">
-                Minimum Charge: <span>{cargoData[0].min_charge || "N/A"}</span>
+                Minimum Charge: <span>{cargoData[0].min_charge || "-"}</span>
               </p>
               <p className="font-semibold">
                 Estimasi: <span>{cargoData[0].estimasi} </span>Hari
               </p>
               <p className="font-semibold">
-                Tarif: <span>{cargoData[0].tarif || "N/A"} </span>
+                Tarif: <span>{cargoData[0].tarif || "-"} </span>
               </p>
               <p className="font-semibold">
-                CDE: <span>{cargoData[0].cde || " N/A"}</span>
+                CDE: <span>{cargoData[0].cde || " -"}</span>
               </p>
               <p className="font-semibold">
-                CDD: <span>{cargoData[0].cdd || " N/A"}</span>
+                CDD: <span>{cargoData[0].cdd || "-"}</span>
               </p>
               <p className="font-semibold">
-                CDD Long: <span>{cargoData[0].cdd_long || "N/A"}</span>
+                CDD Long: <span>{cargoData[0].cdd_long || "-"}</span>
               </p>
             </div>
 
             {/* Tombol WhatsApp */}
-            <div className="relative flex flex-col justify-center items-center mt-6 pb-4">
+            <div className="relative flex flex-col justify-center items-center mt-6">
+              {/* Tombol WhatsApp */}
               <a
                 href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong."
                 target="_blank"
@@ -253,7 +181,7 @@ const CargoSearch = () => {
             </div>
           </div>
         ) : (
-          <p className="text-center text-text-dark/70 mt-4 pb-4">No data found</p>
+          <p className="text-center text-gray-500 mt-4">No data found</p>
         )}
       </div>
     </div>

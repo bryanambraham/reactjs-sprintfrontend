@@ -78,7 +78,7 @@ const CargoSearch = () => {
   }
 
   return (
-    <div className="w-full flex justify-center" id="cargo-search">
+    <div className="w-full flex justify-center z-50" id="cargo-search">
       <div className="max-w-3xl w-full bg-white rounded-lg shadow-md px-4">
         {/* Header */}
         <div className="mt-4 bg-secondary text-text-primary text-center py-4 rounded-t-lg">
@@ -112,7 +112,7 @@ const CargoSearch = () => {
         </div>
 
         {/* Input Pencarian dengan Autocomplete */}
-        <div className="relative mt-4 z-50">
+        <div className="relative mt-4">
           <input
             type="text"
             className="w-full p-2 border rounded-md text-text-dark"

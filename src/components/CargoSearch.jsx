@@ -81,7 +81,7 @@ const CargoSearch = () => {
     <div className="w-full flex justify-center" id="cargo-search">
       <div className="max-w-3xl w-full bg-white rounded-lg shadow-md px-4">
         {/* Header */}
-        <div className="bg-secondary text-text-primary text-center py-4 rounded-t-lg">
+        <div className="mt-4 bg-secondary text-text-primary text-center py-4 rounded-t-lg">
           <h1 className="text-xl font-semibold">Butuh Info Ongkos Kirim Cargo?</h1>
         </div>
 
@@ -126,7 +126,7 @@ const CargoSearch = () => {
 
           {/* Dropdown hasil autocomplete */}
           {showDropdown && filteredDestinations.length > 0 && (
-            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md">
+            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md z-50">
               {filteredDestinations.map((dest, index) => (
                 <li
                   key={index}

@@ -112,7 +112,7 @@ const CargoSearch = () => {
         </div>
 
         {/* Input Pencarian dengan Autocomplete */}
-        <div className="absolute mt-4">
+        <div className="relative mt-4 z-50">
           <input
             type="text"
             className="w-full p-2 border rounded-md text-text-dark"

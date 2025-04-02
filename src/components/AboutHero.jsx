@@ -29,7 +29,7 @@ const AboutHero = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl px-24">
           <h1 className="text-5xl md:text-6xl font-bold text-text-primary mb-6">Tentang Kami</h1>
 
           <p className="text-lg md:text-xl text-text-primary mb-8 leading-relaxed">

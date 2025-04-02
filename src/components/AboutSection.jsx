@@ -9,7 +9,7 @@ const AboutSection = () => {
             <div className="absolute bottom-0 left-1/2 w-1/2 h-1 bg-primary -mb-2 transform -translate-x-1/2"></div>
           </div>
 
-          <div className="space-y-4 text-text-primary">
+          <div className="space-y-4 text-text-primary px-20">
             <p>
               SprintCargo adalah perusahaan ekspedisi yang melayani pengiriman barang ke seluruh penjuru Indonesia. Kami
               memastikan setiap kiriman tiba tepat waktu dan aman, dari kota besar hingga daerah terpencil.

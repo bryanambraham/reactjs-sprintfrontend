@@ -12,7 +12,7 @@ const ShippingSolution = () => {
 
   return (
     <section className="py-16 md:py-24 bg-secondary">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center relative">
           {/* Left side - Image and Video */}
           <div className="relative w-full" data-aos="fade-right">

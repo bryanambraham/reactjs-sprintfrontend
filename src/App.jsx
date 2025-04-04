@@ -17,6 +17,26 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Ongkir from './pages/Ongkir';
 
+import Bandung from "./pages/Bandung";
+import Semarang from "./pages/Semarang";
+import Yogyakarta from "./pages/Yogyakarta";
+import Surabaya from "./pages/Surabaya";
+import Malang from "./pages/Malang";
+import Solo from "./pages/Solo";
+import Cilacap from "./pages/Cilacap";
+import Badung from "./pages/Badung";
+import Buleleng from "./pages/Buleleng";
+import Denpasar from "./pages/Denpasar";
+import Gianyar from "./pages/Gianyar";
+import Karangasem from "./pages/Karangasem";
+import Maluku from "./pages/Maluku";
+import NTB from "./pages/NTB";
+import NTT from "./pages/NTT";
+import NusaPenida from "./pages/NusaPenida";
+import Sulawesi from "./pages/Sulawesi";
+import Tabanan from "./pages/Tabanan";
+import Papua from "./pages/Papua";
+
 function App() {
   return (
     <BrowserRouter>
@@ -38,6 +58,26 @@ function App() {
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:id" element={<BlogPost />} />
+          <Route path="sewatruk" element={<SewaTruk />} />
+          <Route path="bandung" element={<Bandung />} />
+          <Route path="semarang" element={<Semarang />} />
+          <Route path="yogyakarta" element={<Yogyakarta />} />
+          <Route path="surabaya" element={<Surabaya />} />
+          <Route path="malang" element={<Malang />} />
+          <Route path="solo" element={<Solo />} />
+          <Route path="cilacap" element={<Cilacap />} />
+          <Route path="badung" element={<Badung />} />
+          <Route path="buleleng" element={<Buleleng />} />
+          <Route path="denpasar" element={<Denpasar />} />
+          <Route path="gianyar" element={<Gianyar />} />
+          <Route path="karangasem" element={<Karangasem />} />
+          <Route path="maluku" element={<Maluku />} />
+          <Route path="ntb" element={<NTB />} />
+          <Route path="ntt" element={<NTT />} />
+          <Route path="nusapenida" element={<NusaPenida />} />
+          <Route path="sulawesi" element={<Sulawesi />} />
+          <Route path="tabanan" element={<Tabanan />} />
+          <Route path="papua" element={<Papua />} />
         </Route>
       </Routes>
     </BrowserRouter>

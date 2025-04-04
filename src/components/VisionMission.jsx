@@ -7,7 +7,7 @@ const VisionMission = () => {
           <div data-aos="fade-up">
             <h2 className="text-primary font-semibold mb-4">VISI</h2>
             <p className="text-2xl md:text-3xl font-bold text-text-primary">
-              Menjadi Perusahaan Ekspedisi Terbesar Di Indonesia
+              Menjadi Penyedia Layanan Ekspedisi Terbesar di Indonesia
             </p>
           </div>
 
@@ -16,13 +16,13 @@ const VisionMission = () => {
             <h2 className="text-primary font-semibold mb-4">MISI</h2>
             <div className="space-y-4 text-lg text-text-secondary">
               <p data-aos="fade-up" data-aos-delay="300">
-                Memberikan pelayanan terbaik untuk kepuasan pelanggan
+                Memberikan layanan unggul demi kepuasan pelanggan
               </p>
               <p data-aos="fade-up" data-aos-delay="400">
-                Menjadi mitra terpercaya dalam pengiriman barang
+                Menjadi mitra terpercaya dalam proses pengiriman barang
               </p>
               <p data-aos="fade-up" data-aos-delay="500">
-                Mengembangkan jaringan distribusi ke seluruh Indonesia
+                Memperluas jaringan distribusi ke seluruh pelosok Indonesia
               </p>
             </div>
           </div>

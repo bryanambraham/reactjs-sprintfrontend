@@ -113,25 +113,25 @@ function Kalimantan() {
         "Selengkapnya untuk ekspedisi Jakarta bisa klik tautan di bawah ini:",
       ],
       list: [
-        <a href="/Sumatera" className="font-semibold text-text-secondary hover:text-primary" key="sumatera">
+        <a href="/sumatera" className="font-semibold text-text-secondary hover:text-primary" key="sumatera">
           Ekspedisi Jakarta Sumatera
         </a>,
-        <a href="/Kalimantan" className="font-semibold text-text-secondary hover:text-primary" key="kalimantan">
+        <a href="/kalimantan" className="font-semibold text-text-secondary hover:text-primary" key="kalimantan">
           Ekspedisi Jakarta Kalimantan
         </a>,
-        <a href="/NTB" className="font-semibold text-text-secondary hover:text-primary" key="ntb">
+        <a href="/ntb" className="font-semibold text-text-secondary hover:text-primary" key="ntb">
           Ekspedisi Jakarta Nusa Tenggara Barat
         </a>,
-        <a href="/NTT" className="font-semibold text-text-secondary hover:text-primary" key="ntt">
+        <a href="/ntt" className="font-semibold text-text-secondary hover:text-primary" key="ntt">
           Ekspedisi Jakarta Nusa Tenggara Timur
         </a>,
-        <a href="/Sulawesi" className="font-semibold text-text-secondary hover:text-primary" key="sulawesi">
+        <a href="/sulawesi" className="font-semibold text-text-secondary hover:text-primary" key="sulawesi">
           Ekspedisi Jakarta Sulawesi
         </a>,
-        <a href="/Maluku" className="font-semibold text-text-secondary hover:text-primary" key="maluku">
+        <a href="/maluku" className="font-semibold text-text-secondary hover:text-primary" key="maluku">
           Ekspedisi Jakarta Maluku
         </a>,
-        <a href="/Papua" className="font-semibold text-text-secondary hover:text-primary" key="papua">
+        <a href="/papua" className="font-semibold text-text-secondary hover:text-primary" key="papua">
           Ekspedisi Jakarta Papua
         </a>,
       ],

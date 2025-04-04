@@ -131,7 +131,7 @@ export function SiteFooter() {
                 <Linkedin size={20} />
               </a>
             </div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+            {/* <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
             <form className="space-y-2">
               <input
                 type="email"
@@ -144,7 +144,7 @@ export function SiteFooter() {
               >
                 Subscribe
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
@@ -157,11 +157,11 @@ export function SiteFooter() {
               &copy; {new Date().getFullYear()} SprintCargo. All rights reserved.
             </p>
             <div className="flex space-x-4">
-              <Link to="/privacy" className="text-text-secondary hover:text-primary text-sm transition-colors"
+              <Link to="/#" className="text-text-secondary hover:text-primary text-sm transition-colors"
               onClick={() => setIsMenuOpen(false)}>
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-text-secondary hover:text-primary text-sm transition-colors"
+              <Link to="/#" className="text-text-secondary hover:text-primary text-sm transition-colors"
               onClick={() => setIsMenuOpen(false)}>
                 Terms of Service
               </Link>

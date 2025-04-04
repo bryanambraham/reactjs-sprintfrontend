@@ -26,7 +26,7 @@ const WhyChooseHero = ({ className = "" }) => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="200">
+            {/* <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="200">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />
               <div>
                 Kirim Barang Makin Aman Dengan{" "}
@@ -34,7 +34,7 @@ const WhyChooseHero = ({ className = "" }) => {
                   Gratis Asuransi Untuk Barang Dibawah 50jt.
                 </a>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-start gap-2" data-aos="fade-right" data-aos-delay="300">
               <Check className="h-6 w-6 mt-1 flex-shrink-0" />

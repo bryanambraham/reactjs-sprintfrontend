@@ -57,7 +57,8 @@ function App() {
           <Route path="ongkir" element={<Ongkir />} />
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
-          <Route path="blog/:id" element={<BlogPost />} />
+          {/* <Route path="blog/:id" element={<BlogPost />} /> */}
+          <Route path="blog/:slug" element={<BlogPost />} /> {/* Dynamic route for individual blog posts */}
           <Route path="sewatruk" element={<SewaTruk />} />
           <Route path="bandung" element={<Bandung />} />
           <Route path="semarang" element={<Semarang />} />

@@ -77,7 +77,7 @@ const BlogGrid = () => {
               </div>
             </a>
             <div className="p-6">
-              <a href={`/Blog/${post.id}`}>
+              <a href={`/Blog/${post.slug || post.id}`}>
                 <h2 className="text-xl font-bold text-text-primary mb-2 hover:text-primary transition-colors line-clamp-2">
                   {post.title}
                 </h2>
@@ -92,7 +92,7 @@ const BlogGrid = () => {
               </div>
               <div className="text-sm text-text-secondary mb-3">{post.summary}</div>
               <a
-                href={`/Blog/${post.id}`}
+                href={`/Blog/${post.slug || post.id}`}
                 className="inline-block mt-4 text-primary hover:text-primary-dark font-semibold transition-colors"
               >
                 Read More →

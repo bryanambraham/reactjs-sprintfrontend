@@ -1,20 +1,29 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import { ArrowLeft } from "lucide-react"
 
 function BlogPost() {
-  const { id } = useParams() // Get ID from URL using React Router
+  const { slug } = useParams() // Get slug from URL using React Router
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
+  const navigate = useNavigate()
 
   useEffect(() => {
-    if (id) {
+    if (slug) {
+      // Check if slug is a number (old format)
+      const isNumeric = /^\d+$/.test(slug)
+
       const fetchPost = async () => {
         try {
-          const response = await fetch(`${import.meta.env.VITE_API_URL}/getblog/${id}`)
+          // If it's a numeric ID, use that for fetching
+          const endpoint = isNumeric
+            ? `${import.meta.env.VITE_API_URL}/getblog/${slug}`
+            : `${import.meta.env.VITE_API_URL}/getblogbyslug/${slug}`
+
+          const response = await fetch(endpoint)
           if (!response.ok) {
             throw new Error("Failed to fetch blog post")
           }
@@ -29,7 +38,7 @@ function BlogPost() {
 
       fetchPost()
     }
-  }, [id])
+  }, [slug])
 
   if (loading) {
     return (

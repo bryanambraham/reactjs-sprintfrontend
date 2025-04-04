@@ -13,7 +13,7 @@ const WhyChooseHero = ({ className = "" }) => {
         <div className="max-w-3xl mx-auto">
           {/* Title */}
           <h2 className="text-2xl md:text-3xl font-bold bg-secondary text-white p-4 mb-8 rounded-sm" data-aos="fade-down">
-            Kenapa Harus Pilih SprintCargo?
+            Kenapa Harus Pilih Sprint Cargo?
           </h2>
           <hr className="border-t-4 border-white/20 mt-[-20] max-w-lg" />
           {/* Benefits List */}

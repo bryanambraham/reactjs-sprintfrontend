@@ -4,7 +4,7 @@ import { Truck, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } fr
 export function SiteFooter() {
   return (
     <footer className="bg-secondary-dark text-text-primary">
-      <div className="container mx-auto px-24 py-12">
+      <div className="container mx-auto px-4 md:px-20 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -151,7 +151,7 @@ export function SiteFooter() {
 
       {/* Bottom Bar */}
       <div className="bg-black py-4">
-        <div className="container mx-auto px-14">
+        <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-text-secondary text-sm mb-2 md:mb-0">
               &copy; {new Date().getFullYear()} SprintCargo. All rights reserved.

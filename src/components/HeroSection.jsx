@@ -22,7 +22,7 @@ const HeroSection = ({
         </div>
       )}
 
-      <div className="container mx-auto px-24 relative">
+      <div className="container mx-auto px-5 md:px-20 relative">
         <div className="grid md:grid-cols-2 gap-8 items-center py-12 md:py-24">
           <div className="text-text-primary space-y-6" data-aos="fade-right">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{title}</h1>

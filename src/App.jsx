@@ -58,7 +58,13 @@ function App() {
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
           {/* <Route path="blog/:id" element={<BlogPost />} /> */}
-          <Route path="blog/:slug" element={<BlogPost />} /> {/* Dynamic route for individual blog posts */}
+          
+          {/* Legacy numeric ID route - will be redirected */}
+          <Route path="blog/:id(\d+)" element={<BlogPost />} />
+
+          {/* New slug-based route */}
+          <Route path="blog/:slug" element={<BlogPost />} />
+          
           <Route path="sewatruk" element={<SewaTruk />} />
           <Route path="bandung" element={<Bandung />} />
           <Route path="semarang" element={<Semarang />} />

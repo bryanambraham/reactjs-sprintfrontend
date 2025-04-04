@@ -5,40 +5,52 @@ import { useParams, Link, useNavigate } from "react-router-dom"
 import { ArrowLeft } from "lucide-react"
 
 function BlogPost() {
-  const { slug } = useParams() // Get slug from URL using React Router
+  const { slug, id } = useParams() // Get slug or id from URL
   const [post, setPost] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
   const navigate = useNavigate()
 
+  // Determine if we're using a numeric ID or a slug
+  const isNumericId = /^\d+$/.test(slug || id || "")
+  const postIdentifier = isNumericId ? slug || id : extractIdFromSlug(slug || id || "")
+
+  // Function to extract ID from slug (e.g., "my-blog-post-123" -> "123")
+  function extractIdFromSlug(slugText) {
+    const idMatch = slugText.match(/-(\d+)$/)
+    return idMatch ? idMatch[1] : slugText
+  }
+
   useEffect(() => {
-    if (slug) {
-      // Check if slug is a number (old format)
-      const isNumeric = /^\d+$/.test(slug)
-
-      const fetchPost = async () => {
-        try {
-          // If it's a numeric ID, use that for fetching
-          const endpoint = isNumeric
-            ? `${import.meta.env.VITE_API_URL}/getblog/${slug}`
-            : `${import.meta.env.VITE_API_URL}/getblogbyslug/${slug}`
-
-          const response = await fetch(endpoint)
-          if (!response.ok) {
-            throw new Error("Failed to fetch blog post")
-          }
-          const data = await response.json()
-          setPost(data)
-        } catch (err) {
-          setError(err instanceof Error ? err.message : "Failed to load blog post")
-        } finally {
-          setLoading(false)
+    const fetchPost = async () => {
+      try {
+        // Always fetch by ID for consistency
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/getblog/${postIdentifier}`)
+        if (!response.ok) {
+          throw new Error("Failed to fetch blog post")
         }
-      }
+        const data = await response.json()
+        setPost(data)
 
+        // If we're using a numeric ID, redirect to the slug version
+        if (isNumericId && data) {
+          const newSlug = `${data.title
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/\s+/g, "-")}-${postIdentifier}`
+          navigate(`/blog/${newSlug}`, { replace: true })
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load blog post")
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    if (postIdentifier) {
       fetchPost()
     }
-  }, [slug])
+  }, [postIdentifier, isNumericId, navigate])
 
   if (loading) {
     return (

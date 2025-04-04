@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Loader2, ChevronLeft, ChevronRight } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const BlogGrid = () => {
   const [posts, setPosts] = useState([])
@@ -29,6 +30,14 @@ const BlogGrid = () => {
 
     fetchPosts()
   }, [])
+
+  // Function to create a slug from a title
+  const createSlug = (title, id) => {
+    return `${title
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")}-${id}`
+  }
 
   if (loading) {
     return (
@@ -60,46 +69,50 @@ const BlogGrid = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {currentPosts.map((post, index) => (
-          <article
-            key={post.id}
-            className="bg-accent rounded-lg shadow-md overflow-hidden"
-            data-aos="fade-up"
-            data-aos-delay={(index % postsPerPage) * 100}
-          >
-            <a href="#" className="block">
-              <div className="relative aspect-[16/9]">
-                <img
-                  src={post.image ? post.image : "/ekspedisi.png"}
-                  alt={post.title}
-                  className="object-cover w-full h-full"
-                />
+        {currentPosts.map((post, index) => {
+          const postSlug = createSlug(post.title, post.id)
+
+          return (
+            <article
+              key={post.id}
+              className="bg-accent rounded-lg shadow-md overflow-hidden"
+              data-aos="fade-up"
+              data-aos-delay={(index % postsPerPage) * 100}
+            >
+              <Link to={`/blog/${postSlug}`} className="block">
+                <div className="relative aspect-[16/9]">
+                  <img
+                    src={post.image ? post.image : "/ekspedisi.png"}
+                    alt={post.title}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              </Link>
+              <div className="p-6">
+                <Link to={`/blog/${postSlug}`}>
+                  <h2 className="text-xl font-bold text-text-primary mb-2 hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
+                </Link>
+                <div className="text-sm text-text-secondary mb-3">
+                  by {post.writer} |{" "}
+                  {new Date(post.created_at).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </div>
+                <div className="text-sm text-text-secondary mb-3">{post.summary}</div>
+                <Link
+                  to={`/blog/${postSlug}`}
+                  className="inline-block mt-4 text-primary hover:text-primary-dark font-semibold transition-colors"
+                >
+                  Read More →
+                </Link>
               </div>
-            </a>
-            <div className="p-6">
-              <a href={`/Blog/${post.slug || post.id}`}>
-                <h2 className="text-xl font-bold text-text-primary mb-2 hover:text-primary transition-colors line-clamp-2">
-                  {post.title}
-                </h2>
-              </a>
-              <div className="text-sm text-text-secondary mb-3">
-                by {post.writer} |{" "}
-                {new Date(post.created_at).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </div>
-              <div className="text-sm text-text-secondary mb-3">{post.summary}</div>
-              <a
-                href={`/Blog/${post.slug || post.id}`}
-                className="inline-block mt-4 text-primary hover:text-primary-dark font-semibold transition-colors"
-              >
-                Read More →
-              </a>
-            </div>
-          </article>
-        ))}
+            </article>
+          )
+        })}
       </div>
 
       {/* Pagination Controls */}

@@ -87,7 +87,7 @@ const CargoSearch = () => {
 
         {/* Tabs Pilihan Transportasi */}
         <div className="flex justify-center bg-secondary/70 py-3 rounded-b-lg">
-          {["darat", "laut", "udara", "mobil", "ftl", "cargo", "reguler"].map((t) => (
+          {["darat", "laut", "udara", "mobil", "ftl"].map((t) => (
             <button
               key={t}
               className={`px-6 py-2 mx-2 text-white font-semibold ${type === t ? "bg-primary-dark" : "bg-secondary"}`}
@@ -101,10 +101,10 @@ const CargoSearch = () => {
                     ? "✈️"
                     : t === "ftl"
                       ? "✈️"
-                      : t === "cargo"
-                        ? "✈️"
-                        : t === "reguler"
-                          ? "✈️"
+                      // : t === "cargo"
+                      //   ? "✈️"
+                      //   : t === "reguler"
+                      //     ? "✈️"
                           : "🚗"}{" "}
               {t.toUpperCase()}
             </button>

@@ -147,27 +147,38 @@ const CargoSearch = () => {
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
             </div>
             <div className="bg-white p-4 text-text-dark">
-              <p className="font-semibold">
-                Minimum Charge: <span>{cargoData[0].min_charge || "-"}</span>
-              </p>
-              <p className="font-semibold">
-                Estimasi: <span>{cargoData[0].estimasi} </span>Hari
-              </p>
-              <p className="font-semibold">
-                Tarif: <span>{cargoData[0].tarif || "-"} </span>
-              </p>
-              <p className="font-semibold">
-                CDE: <span>{cargoData[0].cde || "-"}</span>
-              </p>
-              <p className="font-semibold">
-                CDD: <span>{cargoData[0].cdd || "-"}</span>
-              </p>
-              <p className="font-semibold">
-                CDD Long: <span>{cargoData[0].cdd_long || "-"}</span>
-              </p>
-              <p className="font-semibold">
-                Keterangan: <span>{cargoData[0].keterangan || "-"}</span>
-              </p>
+              {type === "ftl" && (
+                <>
+                  <p className="font-semibold">
+                    Estimasi: <span>{cargoData[0].estimasi} </span>
+                  </p>
+                  <p className="font-semibold">
+                    CDE: <span>{cargoData[0].cde || "-"}</span>
+                  </p>
+                  <p className="font-semibold">
+                    CDD: <span>{cargoData[0].cdd || "-"}</span>
+                  </p>
+                  <p className="font-semibold">
+                    CDD Long: <span>{cargoData[0].cdd_long || "-"}</span>
+                  </p>
+                  <p className="font-semibold">
+                    Keterangan: <span>{cargoData[0].keterangan || "-"}</span>
+                  </p>
+                </>
+              )}
+              {type !== "ftl" && (
+                <>
+                  <p className="font-semibold">
+                    Minimum Charge: <span>{cargoData[0].min_charge || "-"}</span>
+                  </p>
+                  <p className="font-semibold">
+                    Estimasi: <span>{cargoData[0].estimasi} </span>
+                  </p>
+                  <p className="font-semibold">
+                    Tarif: <span>{cargoData[0].tarif || "-"} </span>
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Tombol WhatsApp */}

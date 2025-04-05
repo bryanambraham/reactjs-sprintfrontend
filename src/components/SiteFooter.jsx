@@ -86,27 +86,27 @@ export function SiteFooter() {
             <h3 className="text-lg font-semibold mb-4">Destinations</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/jawa" className="text-text-secondary hover:text-primary transition-colors"
+                <Link to="/papua" className="text-text-secondary hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}>
-                  Jawa
+                  Papua
                 </Link>
               </li>
               <li>
-                <Link to="/bali" className="text-text-secondary hover:text-primary transition-colors"
+                <Link to="/ntb" className="text-text-secondary hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}>
-                  Bali
+                  Nusa Tenggara Barat
                 </Link>
               </li>
               <li>
-                <Link to="/kalimantan" className="text-text-secondary hover:text-primary transition-colors"
+                <Link to="/ntt" className="text-text-secondary hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}>
-                  Kalimantan
+                  Nusa Tenggara Timur
                 </Link>
               </li>
               <li>
-                <Link to="/sumatera" className="text-text-secondary hover:text-primary transition-colors"
+                <Link to="/maluku" className="text-text-secondary hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}>
-                  Sumatera
+                  Maluku
                 </Link>
               </li>
               <li>

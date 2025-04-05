@@ -41,7 +41,7 @@ function Motor() {
           </a>
         </em>,
       ],
-      imageURL: "/placeholder.svg",
+      imageURL: "/mobil.jpg",
       imageAlt: "Mobil",
     },    
   ]
@@ -55,7 +55,7 @@ function Motor() {
           text: "Hubungi CS Kami",
           href: "/#",
         }}
-        imageUrl="/ekspedisi.png"
+        imageUrl="/motorcycleship.jpg"
         imageAlt="Hero PIC"
       />
 

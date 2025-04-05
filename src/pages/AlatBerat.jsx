@@ -45,7 +45,7 @@ function AlatBerat() {
           </a>
         </em>,
       ],
-      imageURL: "/placeholder.svg",
+      imageURL: "/mobil.jpg",
       imageAlt: "Mobil",
     },    
   ]
@@ -59,7 +59,7 @@ function AlatBerat() {
           text: "Hubungi CS Kami",
           href: "/#",
         }}
-        imageUrl="/ekspedisi.png"
+        imageUrl="/alatberat.jpg"
         imageAlt="Hero PIC"
       />
 

@@ -69,8 +69,8 @@ function Mobil() {
           </a>
         </em>,
       ],
-      imageURL: "/placeholder.svg",
-      imageAlt: "Mobil",
+      imageURL: "/motorcycleship.jpg",
+      imageAlt: "Motor",
     },
   ]
 
@@ -83,7 +83,7 @@ function Mobil() {
           text: "Hubungi CS Kami",
           href: "/#",
         }}
-        imageUrl="/ekspedisi.png"
+        imageUrl="/mobil.jpg"
         imageAlt="Hero PIC"
       />
 

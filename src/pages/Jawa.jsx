@@ -144,7 +144,7 @@ function Jawa() {
           text: "Hubungi CS Kami",
           href: "https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20mau%20bertanya%20dong.",
         }}
-        imageUrl="/ekspedisi.png"
+        imageUrl="/jawa.jpg"
         imageAlt="Hero PIC"
       />
 

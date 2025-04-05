@@ -115,7 +115,7 @@ function BlogPost() {
               </div>
             </div>
 
-            <div className="prose max-w-none text-text-primary">{post.content}</div>
+            <div className="prose w-max text-text-primary">{post.content}</div>
           </div>
         </article>
       </div>

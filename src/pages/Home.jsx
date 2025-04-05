@@ -23,10 +23,10 @@ function Home() {
           text: "CEK ONGKIR",
           href: "/ongkir",
         }}
-        certifications={[
-          { imageUrl: "/certif.png", alt: "Certification"},
-          // { imageUrl: "/placeholder.svg", alt: "TUV Certification" },
-        ]}
+        // certifications={[
+        //   { imageUrl: "/certif.png", alt: "Certification"},
+        //   // { imageUrl: "/placeholder.svg", alt: "TUV Certification" },
+        // ]}
         imageUrl="/deliverbarang.jpg"
         imageAlt="Deliver"
       />

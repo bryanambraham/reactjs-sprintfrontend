@@ -87,25 +87,25 @@ const CargoSearch = () => {
 
         {/* Tabs Pilihan Transportasi */}
         <div className="flex justify-center bg-secondary/70 py-3 rounded-b-lg">
-          {["darat", "laut", "udara", "mobil", "ftl"].map((t) => (
+          {["cargo", "reguler", "ftl", "mobil"].map((t) => (
             <button
               key={t}
               className={`px-6 py-2 mx-2 text-white font-semibold ${type === t ? "bg-primary-dark" : "bg-secondary"}`}
               onClick={() => handleTypeChange(t)}
             >
-              {t === "darat"
-                ? "🚛"
-                : t === "laut"
-                  ? "⛴️"
-                  : t === "udara"
-                    ? "✈️"
-                    : t === "ftl"
-                      ? "✈️"
+              {t === "cargo"
+                ? "⛴️"
+                : t === "reguler"
+                  ? "🚚"
+                  : t === "ftl"
+                    ? "🚛"
+                    : t === "mobil"
+                      ? "🚗"
                       // : t === "cargo"
                       //   ? "✈️"
                       //   : t === "reguler"
                       //     ? "✈️"
-                          : "🚗"}{" "}
+                          : "📦"}{" "}
               {t.toUpperCase()}
             </button>
           ))}
@@ -157,13 +157,16 @@ const CargoSearch = () => {
                 Tarif: <span>{cargoData[0].tarif || "-"} </span>
               </p>
               <p className="font-semibold">
-                CDE: <span>{cargoData[0].cde || " -"}</span>
+                CDE: <span>{cargoData[0].cde || "-"}</span>
               </p>
               <p className="font-semibold">
                 CDD: <span>{cargoData[0].cdd || "-"}</span>
               </p>
               <p className="font-semibold">
                 CDD Long: <span>{cargoData[0].cdd_long || "-"}</span>
+              </p>
+              <p className="font-semibold">
+                Keterangan: <span>{cargoData[0].keterangan || "-"}</span>
               </p>
             </div>
 

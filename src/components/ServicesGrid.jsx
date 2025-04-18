@@ -52,7 +52,7 @@ const ServicesGrid = () => {
         {/* Title */}
         <div className="text-center mb-12" data-aos="fade-up">
           <div className="relative inline-block">
-            <h2 className="text-3xl font-bold text-text-primary">LAYANAN EKSPEDISI SPRINT CARGO</h2>
+            <h2 className="text-3xl font-bold text-text-primary">LAYANAN EKSPEDISI SPRINTCARGO</h2>
             <div className="absolute bottom-0 left-0 w-full h-1 bg-primary -mb-2"></div>
           </div>
         </div>
@@ -60,9 +60,9 @@ const ServicesGrid = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <a key={index} href={service.href} data-aos="fade-up" data-aos-delay={index * 100}>
-              <div className="bg-accent rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300">
-                <div className="flex flex-col items-center text-center space-y-4">
+            <a key={index} href={service.href} data-aos="fade-up" data-aos-delay={index * 100} className="h-full">
+              <div className="bg-accent rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow transform hover:-translate-y-1 duration-300 h-full flex flex-col">
+                <div className="flex flex-col items-center text-center space-y-4 flex-grow">
                   {/* Icon */}
                   <div className={`${service.color} p-4 rounded-full text-white`}>{service.icon}</div>
 
@@ -70,7 +70,7 @@ const ServicesGrid = () => {
                   <h3 className="text-xl font-semibold text-text-primary">{service.title}</h3>
 
                   {/* Description */}
-                  <p className="text-text-secondary">{service.description}</p>
+                  <p className="text-text-secondary flex-grow">{service.description}</p>
                 </div>
               </div>
             </a>
@@ -92,4 +92,3 @@ const ServicesGrid = () => {
 }
 
 export default ServicesGrid
-

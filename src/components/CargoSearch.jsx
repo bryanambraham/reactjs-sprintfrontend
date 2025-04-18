@@ -10,6 +10,7 @@ const CargoSearch = () => {
   const [allDestinations, setAllDestinations] = useState([])
   const [filteredDestinations, setFilteredDestinations] = useState([])
   const [showDropdown, setShowDropdown] = useState(false)
+  const [isMobilType, setIsMobilType] = useState(false)
 
   // Fetch daftar tujuan ketika komponen dimuat
   useEffect(() => {
@@ -33,6 +34,7 @@ const CargoSearch = () => {
     setSelectedDestination("") // ✅ Reset selectedDestination
     setCargoData([])
     setShowDropdown(false)
+    setIsMobilType(newType === "mobil")
   }
 
   // Fungsi untuk menangani perubahan input pencarian
@@ -112,36 +114,60 @@ const CargoSearch = () => {
         </div>
 
         {/* Input Pencarian dengan Autocomplete */}
-        <div className="relative mt-4">
-          <input
-            type="text"
-            className="w-full p-2 border rounded-md text-text-dark"
-            placeholder="Masukkan Tujuan..."
-            value={destination}
-            onChange={handleInputChange}
-          />
-          <button onClick={searchCargo} className="absolute right-2 top-2 text-gray-600">
-            🔍
-          </button>
+        {!isMobilType ? (
+            <div className="relative mt-4">
+            <input
+              type="text"
+              className="w-full p-2 border rounded-md text-text-dark"
+              placeholder="Masukkan Tujuan..."
+              value={destination}
+              onChange={handleInputChange}
+            />
+            <button onClick={searchCargo} className="absolute right-2 top-2 text-gray-600">
+              🔍
+            </button>
 
-          {/* Dropdown hasil autocomplete */}
-          {showDropdown && filteredDestinations.length > 0 && (
-            <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md z-50">
-              {filteredDestinations.map((dest, index) => (
-                <li
-                  key={index}
-                  className="p-2 cursor-pointer text-text-dark z-50"
-                  onClick={() => handleSelectDestination(dest)}
+            {/* Dropdown hasil autocomplete */}
+            {showDropdown && filteredDestinations.length > 0 && (
+              <ul className="absolute w-full bg-white border mt-1 max-h-40 overflow-y-auto shadow-lg rounded-md z-50">
+                {filteredDestinations.map((dest, index) => (
+                  <li
+                    key={index}
+                    className="p-2 cursor-pointer text-text-dark z-50"
+                    onClick={() => handleSelectDestination(dest)}
+                  >
+                    {dest}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ) : (
+          <div className="mt-6 bg-secondary rounded-lg shadow-md">
+            <div className="bg-secondary/80 text-text-primary p-3 text-lg font-bold">
+              <span>PENGIRIMAN MOBIL</span>
+            </div>
+            <div className="bg-white p-4 text-text-dark">
+              <p className="text-lg font-medium text-center mb-4">
+                Untuk Opsi dengan Mobil, Harga Fluktuatif. Silahkan Hubungi Kami untuk penjelasan selanjutnya.
+              </p>
+
+              {/* Tombol WhatsApp */}
+              <div className="flex justify-center mt-6">
+                <a
+                  href="https://wa.me/6285282656556?text=Hai%20SprintCargo,%20saya%20ingin%20menanyakan%20tentang%20pengiriman%20mobil."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white px-6 py-3 rounded-md text-lg font-semibold flex items-center gap-2 hover:bg-green-600 transition-colors"
                 >
-                  {dest}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
+                  📞 Hubungi CS Kami
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
         {/* Hasil Pencarian */}
-        {cargoData.length > 0 ? (
+        { !isMobilType && cargoData.length > 0 ? (
           <div className="mt-6 bg-secondary rounded-lg shadow-md">
             <div className="bg-secondary/80 text-text-primary p-3 text-lg font-bold flex justify-between">
               <span>JAKARTA ➡️ {cargoData[0].tujuan.toUpperCase()}</span>
@@ -195,7 +221,7 @@ const CargoSearch = () => {
             </div>
           </div>
         ) : (
-          <p className="text-center text-gray-500 mt-4">No data found</p>
+          !isMobilType && <p className="text-center text-gray-500 mt-4">No data found</p>
         )}
       </div>
     </div>

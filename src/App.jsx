@@ -36,6 +36,7 @@ import NusaPenida from "./pages/NusaPenida";
 import Sulawesi from "./pages/Sulawesi";
 import Tabanan from "./pages/Tabanan";
 import Papua from "./pages/Papua";
+import AgentRegistration from "./pages/AgentRegistration"
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path="ongkir" element={<Ongkir />} />
           <Route path="promo" element={<Promo />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="agent-registration" element={<AgentRegistration />} /> 
           {/* <Route path="blog/:id" element={<BlogPost />} /> */}
           
           {/* Legacy numeric ID route - will be redirected */}

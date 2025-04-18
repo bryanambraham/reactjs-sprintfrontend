@@ -17,42 +17,10 @@ const ShippingSolution = () => {
           {/* Left side - Image and Video */}
           <div className="relative w-full" data-aos="fade-right">
             {/* Staff Image */}
-            <img src="/staffsprint.jpg" alt="SprintCargo Staff" className="object-cover w-1/2 rounded-lg" />
+            <img src="/staffsprint.jpg" alt="SprintCargo Staff" className="object-cover w-4/6 rounded-lg" />
 
             {/* Video Thumbnail / Player */}
-            <div
-              className="absolute bottom-[-40px] left-10 w-[350px] sm:w-[400px] rounded-lg overflow-hidden shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              {!isPlaying ? (
-                <div className="relative w-full h-full">
-                  <img
-                    src={`https://img.youtube.com/vi/VKGQHTwB8p4/maxresdefault.jpg`}
-                    alt="YouTube Thumbnail"
-                    className="object-cover w-full h-full"
-                  />
-                  {/* Play Button */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-                      onClick={handlePlayClick}
-                    >
-                      <Play className="w-8 h-8 text-primary ml-1" />
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <iframe
-                  className="w-full aspect-video rounded-lg"
-                  src={`https://www.youtube.com/embed/VKGQHTwB8p4?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              )}
-            </div>
+
           </div>
 
           {/* Right side - Content */}
